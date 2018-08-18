@@ -20,12 +20,18 @@ public class RegistrationController implements Initializable {
     public void registerUser(ActionEvent event) throws Exception{
         /*TODO: Implements a sort of database to store user information.
           We will utilize the variables created above (username, password).
+
+          UserInformation userInformation = new UserInformation(username.getText().toString, password.getText().toString);
+          Database database = new Database(userInformation);
+
+
         */
+
 
     }
 
     public void changeToMainScreen(ActionEvent event) throws Exception {
-        MainController mainController = new MainController();
-        mainController.changeToMainScreen(event);
+        LoginController loginController = new LoginController();
+        loginController.changeToMainScreen(event);
     }
 }

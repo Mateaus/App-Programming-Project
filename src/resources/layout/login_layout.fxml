@@ -10,18 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns:a="http://javafx.com/javafx/8.0.121" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns:a="http://javafx.com/javafx/8.0.121" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
     <children>
         <Pane layoutX="10.0" layoutY="10.0" prefHeight="750.0" prefWidth="1003.0" styleClass="bodybg" stylesheets="@../CSS/style.css">
             <children>
-                <Pane layoutX="320.0" layoutY="200.0" opacity="0.66" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #23272a;">
-               <children>
-                      <Hyperlink fx:id="registerBtn" layoutX="149.0" layoutY="348.0" onAction="#changeToRegisterScreen" text="Register Here" textFill="WHITE">
-                          <font>
-                              <Font size="15.0" />
-                          </font>
-                      </Hyperlink>
-               </children></Pane>
+                <Pane layoutX="320.0" layoutY="200.0" opacity="0.66" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #23272a;" />
                 <Label layoutX="467.0" layoutY="230.0" style="-fx-font-weight: bold;" text="WELCOME!" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="21.0" />
@@ -60,6 +53,13 @@
                         <Font size="15.0" />
                     </font>
                 </Button>
+                <Hyperlink fx:id="registerBtn" layoutX="470.0" layoutY="540.0" onAction="#changeToRegisterScreen" text="Register Here" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Hyperlink>
+            <Label layoutX="330.0" layoutY="580.0" text="DB Status:" textFill="WHITE" />
+            <Label fx:id="connectionLb" layoutX="385.0" layoutY="580.0" text="status" textFill="WHITE" />
             </children>
         </Pane>
     </children>

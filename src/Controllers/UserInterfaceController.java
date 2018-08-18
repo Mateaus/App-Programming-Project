@@ -13,7 +13,7 @@ public class UserInterfaceController implements Initializable {
     }
 
     public void changeToMainScreen(ActionEvent event) throws Exception {
-        MainController mainController = new MainController();
-        mainController.changeToMainScreen(event);
+        LoginController loginController = new LoginController();
+        loginController.changeToMainScreen(event);
     }
 }
