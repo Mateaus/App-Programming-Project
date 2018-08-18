@@ -39,10 +39,18 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void changeToUIScreen(ActionEvent event) throws Exception {
+    public void changeToUIScreen(ActionEvent event) {
         // Currently this is as placeholder until we are able to fetch data from DataBase
-        UserInterface user = new UserInterface();
-        user.start(event);
+        try {
+            if(databaseStatus.isLogin(emailTF.getText().toString(), passTF.getText().toString())) {
+                UserInterface user = new UserInterface();
+                user.start(event);
+            } else {
+                connectionLb.setText("Wrong username or password");
+            }
+        } catch (Exception e) {
+            connectionLb.setText("Wrong username or password");
+        }
 
     }
 
