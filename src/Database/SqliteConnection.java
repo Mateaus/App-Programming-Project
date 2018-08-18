@@ -3,6 +3,13 @@ package Database;
 import java.sql.*;
 
 public class SqliteConnection {
+
+    /**
+     * Connect to the student.db database
+     *
+     * @return the Connection object
+     */
+
     public static Connection Connector() {
         try {
             Class.forName("org.sqlite.JDBC");

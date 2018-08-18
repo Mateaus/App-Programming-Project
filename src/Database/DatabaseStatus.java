@@ -8,7 +8,13 @@ import java.sql.*;
 
 public class DatabaseStatus {
 
+    // Connect to the student.db database
     Connection connection;
+
+    /*
+     * Checks if the project is connected to the DataBase correctly,
+     * else, it exits the project.
+     */
 
     public DatabaseStatus() {
         connection = SqliteConnection.Connector();
@@ -18,6 +24,11 @@ public class DatabaseStatus {
         }
     }
 
+    /*
+     * Checks if DataBase is connected or not.
+     * Returns boolean;
+     */
+
     public boolean isDBConnected() {
         try {
             return !connection.isClosed();
@@ -26,6 +37,12 @@ public class DatabaseStatus {
             return false;
         }
     }
+
+    /**
+     * Get the student whose table is equals to the email and password
+     * @param email
+     * @param pass
+     */
 
     public boolean isLogin(String email, String pass) throws SQLException {
         PreparedStatement preparedStatement = null;
@@ -51,6 +68,12 @@ public class DatabaseStatus {
         }
     }
 
+    /**
+     * Get the student whose student_name is equals to the email and password
+     * @param email
+     * @param pass
+     */
+
     public String searchName(String email, String pass) throws SQLException {
         String studentName = null;
         PreparedStatement preparedStatement = null;
@@ -58,7 +81,7 @@ public class DatabaseStatus {
         String query = "SELECT student_name FROM students WHERE email = ? AND password = ?";
         try{
             preparedStatement = connection.prepareStatement(query);
-            // set the strings
+            // set the string parameters for the DB from the string passed as parameters through the function
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, pass);
             resultSet = preparedStatement.executeQuery();
@@ -76,6 +99,14 @@ public class DatabaseStatus {
             resultSet.close();
         }
     }
+
+    /**
+     * Insert a new row into the students table
+     *
+     * @param name
+     * @param email
+     * @param pass
+     */
 
     public void registerAccount(String name, String email, String pass) throws SQLException {
         PreparedStatement preparedStatement = null;
