@@ -1,6 +1,7 @@
 package Controllers;
 
 import Classes.Registration;
+import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
 import javafx.event.ActionEvent;
@@ -41,10 +42,13 @@ public class LoginController implements Initializable {
 
     public void changeToUIScreen(ActionEvent event) {
         // Currently this is as placeholder until we are able to fetch data from DataBase
+        String email = emailTF.getText().toString();
+        String password = passTF.getText().toString();
         try {
-            if(databaseStatus.isLogin(emailTF.getText().toString(), passTF.getText().toString())) {
+            if(databaseStatus.isLogin(email, password)) {
+                UserInformation userInformation = new UserInformation(email, password);
                 UserInterface user = new UserInterface();
-                user.start(event);
+                user.start(event, userInformation);
             } else {
                 connectionLb.setText("Wrong username or password");
             }

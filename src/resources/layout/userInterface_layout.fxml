@@ -7,11 +7,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserInterfaceController">
    <children>
-      <Label layoutX="222.0" layoutY="14.0" text="Welcome Username!" textAlignment="CENTER">
+      <Label layoutX="249.0" layoutY="14.0" text="Welcome" textAlignment="CENTER">
          <font>
             <Font size="63.0" />
          </font>
       </Label>
       <Button layoutX="419.0" layoutY="252.0" mnemonicParsing="false" onAction="#changeToMainScreen" prefHeight="51.0" prefWidth="181.0" text="Return" />
+      <Label fx:id="studentLB" layoutX="545.0" layoutY="14.0" text="Username" textAlignment="CENTER">
+         <font>
+            <Font size="63.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

@@ -2,14 +2,20 @@ package Classes;
 
 public class UserInformation {
 
-    private String name, password;
+    private String name, email, password;
 
     public UserInformation() {
         return;
     }
 
-    public UserInformation(String name, String password){
+    public UserInformation(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserInformation(String name, String email, String password){
         this.name = name;
+        this.email = email;
         this.password = password;
     }
 
@@ -19,6 +25,14 @@ public class UserInformation {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
