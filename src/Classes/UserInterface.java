@@ -30,7 +30,7 @@ public class UserInterface {
         userInterfaceController.setStudentName(studentName); // setStudentname to String studentName
 
         // Stage now under windows, calls scene and loads the scene.
-        Stage windows = new Stage();
+        Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window
         windows.setScene(scene);
         windows.show();
     }
