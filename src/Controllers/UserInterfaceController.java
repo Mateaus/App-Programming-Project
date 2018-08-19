@@ -25,7 +25,7 @@ public class UserInterfaceController implements Initializable {
 
     }
 
-    public void changeToMainScreen(ActionEvent event) throws Exception {
+    public void logOut(ActionEvent event) throws Exception {
         LoginController loginController = new LoginController();
         loginController.changeToMainScreen(event);
     }
