@@ -12,11 +12,12 @@
             <Font size="63.0" />
          </font>
       </Label>
-      <Button layoutX="419.0" layoutY="252.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="181.0" text="Logout" />
+      <Button layoutX="419.0" layoutY="600.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="181.0" text="Logout" />
       <Label fx:id="studentLB" layoutX="545.0" layoutY="14.0" text="Username" textAlignment="CENTER">
          <font>
             <Font size="63.0" />
          </font>
       </Label>
+      <Button layoutX="77.0" layoutY="168.0" mnemonicParsing="false" onAction="#blackBoardApp" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20;" styleClass="blackboardapp" stylesheets="@../CSS/style.css" />
    </children>
 </Pane>

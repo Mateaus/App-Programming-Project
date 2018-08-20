@@ -2,6 +2,10 @@
     -fx-background-image: url("/resources/drawable/utsa.png");
 }
 
+.blackboardapp{
+    -fx-background-image: url("/resources/drawable/blackboard_icon.png");
+}
+
 .text{
     -fx-text-fill: white;
     -fx-border-radius: 0;

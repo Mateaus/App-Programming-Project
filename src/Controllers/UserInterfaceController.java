@@ -1,7 +1,6 @@
 package Controllers;
 
-import Classes.UserInformation;
-import Classes.UserInterface;
+import Classes.BlackBoardApp;
 import Database.DatabaseStatus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UserInterfaceController implements Initializable {
@@ -23,6 +21,11 @@ public class UserInterfaceController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // We start reading from here
 
+    }
+
+    public void blackBoardApp(ActionEvent event) throws Exception {
+        BlackBoardApp blackBoardApp = new BlackBoardApp();
+        blackBoardApp.start(event);
     }
 
     public void logOut(ActionEvent event) throws Exception {
