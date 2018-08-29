@@ -1,6 +1,5 @@
 package Controllers;
 
-import Classes.Registration;
 import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
@@ -71,8 +70,14 @@ public class LoginController implements Initializable {
     }
 
     public void changeToRegisterScreen(ActionEvent event) throws Exception {
-        Registration registration = new Registration();
-        registration.start(event);
+        // Loads the registration layout
+        Pane registration = (Pane) FXMLLoader.load(getClass().getResource("/resources/layout/registration_layout.fxml"));
+        Scene registrationScreen = new Scene(registration);
+
+        // This line gets the Stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(registrationScreen);
+        window.show(); // changes to the new window
     }
 
 }

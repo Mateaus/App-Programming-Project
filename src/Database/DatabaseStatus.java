@@ -48,7 +48,7 @@ public class DatabaseStatus {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         String query = "SELECT * FROM students WHERE email = ? AND password = ?";
-        System.out.printf("%s\n", query);
+        //System.out.printf("%s\n", query);
         try {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
@@ -87,7 +87,7 @@ public class DatabaseStatus {
             resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()) {
-                System.out.println(resultSet.getString("student_name"));
+                //System.out.println(resultSet.getString("student_name"));
                 studentName = resultSet.getString("student_name");
             }
             return studentName;
