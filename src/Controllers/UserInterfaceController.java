@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -38,7 +39,20 @@ public class UserInterfaceController implements Initializable {
         windows.setScene(scene);
         windows.show();
     }
+    
+    public void weatherApp(ActionEvent event) throws Exception
+    {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/weatherapp_layout.fxml"));
+        Pane userInterface = loader.load(); // userInterface holds the loader information
+        Scene scene = new Scene(userInterface); // new scene holding userInterface
 
+        // Stage now under windows, calls scene and loads the scene.
+        //TODO: New screen when clicked for this APP
+        Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window
+        windows.setScene(scene);
+        windows.show();
+    }
+    
     public void logOut(ActionEvent event) throws Exception {
         LoginController loginController = new LoginController();
         loginController.changeToMainScreen(event);
