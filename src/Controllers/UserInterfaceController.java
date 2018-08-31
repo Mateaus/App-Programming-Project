@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,6 +53,7 @@ public class UserInterfaceController implements Initializable {
         windows.setScene(scene);
         windows.show();
     }
+
     
     public void logOut(ActionEvent event) throws Exception {
         LoginController loginController = new LoginController();

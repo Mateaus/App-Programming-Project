@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -26,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -34,6 +36,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class WeatherAppController implements Initializable
@@ -95,7 +98,24 @@ public class WeatherAppController implements Initializable
 		progIndicator.setOpacity(1);
 		progIndicator.setProgress(-1);
 		startThread(); 
-		//onButtonClick();
+		
+	}
+	public void backButton(ActionEvent event) throws Exception
+	{
+		//returnToUI(event);
+		System.out.println("here");
+	}
+	public void returnToUI(ActionEvent event) throws Exception
+	{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
+        Pane userInterface = loader.load(); // userInterface holds the loader information
+        Scene scene = new Scene(userInterface); // new scene holding userInterface
+
+        // Stage now under windows, calls scene and loads the scene.
+        //TODO: New screen when clicked for this APP
+        Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window
+        windows.setScene(scene);
+        windows.show();
 	}
 	
 	public void startThread()
@@ -196,66 +216,6 @@ public class WeatherAppController implements Initializable
 			// Sets the weather icon
 			img.setOpacity(0);
 		}
-		
-		/*double time;
-		timeline = new Timeline(
-        new KeyFrame(Duration.seconds(time = runtime() * -1/15), e -> 
-        {
-        	// do anything you need here on completion...
-        	// Checks to see if the status confirmed we received a weather for the given location
-			if(status.equals("OK"))
-			{
-				// Updates the summary condition
-				if(errMsg.contains("minutely")) // minutely
-					summary.setText("Summary for location is not available.");
-				else if(errMsg.contains("OVER")) // if over allowed query
-					summary.setText("");
-				else
-					summary.setText(condition);
-				
-				// Sets the output label to the current address from the city location text field
-				if(errMsg.contains("currently") || errMsg.contains("OVER"))
-					output.setText("Location not available.");
-				else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-					output.setText(status);
-				else
-					output.setText(postcode); // currently
-				
-				// Sets the weather label's text to the temperature
-				if(errMsg.contains("currently")) // currently
-					Weather.setText("temperature for location is not available.");
-				else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-					Weather.setText("");
-				else
-					Weather.setText(temperature);
-				// Sets the weather icon
-				if(errMsg.startsWith("currently")) // currently
-					img.setOpacity(0);
-				else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-					img.setOpacity(0);
-				else
-				{
-					img.setOpacity(1);
-					currentWeather(icon); 
-				}
-				errMsg = "None"; // Resets error message to no errors
-			}
-			else
-			{
-				// Updates the summary condition
-				summary.setText(null);
-				// Sets the output label to the current address from the city location text field
-				output.setText(status);
-				// Sets the weather label's text to the temperature
-				Weather.setText(null);
-				// Sets the weather icon
-				img.setOpacity(0);
-			}
-			progIndicator.setOpacity(0);
-        }) 
-        );
-        timeline.setCycleCount(1);
-        timeline.play();*/
 	}
 	
 	public double runtime()
@@ -294,7 +254,6 @@ public class WeatherAppController implements Initializable
 		catch(Exception err) // Throws an error
 		{
 			errMsg = err + "";
-			//System.out.println(err); // used to debug errors
 		}
 		long endTime = System.nanoTime();
 		totalTime = beginingTime - endTime;
