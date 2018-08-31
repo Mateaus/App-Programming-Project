@@ -100,11 +100,7 @@ public class WeatherAppController implements Initializable
 		startThread(); 
 		
 	}
-	public void backButton(ActionEvent event) throws Exception
-	{
-		//returnToUI(event);
-		System.out.println("here");
-	}
+	
 	public void returnToUI(ActionEvent event) throws Exception
 	{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
