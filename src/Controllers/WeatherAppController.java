@@ -46,7 +46,7 @@ public class WeatherAppController implements Initializable
 	@FXML private ImageView img;
 	@FXML private TextField cityLocation;
 	@FXML private ProgressIndicator progIndicator;
-	private String latitude, longitude, developerAPIKey;
+	private String latitude, longitude, developerAPIKey, city;
 	private String temperature, condition, status, errMsg = "None";
 	private String icon, postcode = "San Antonio";
 
@@ -61,6 +61,8 @@ public class WeatherAppController implements Initializable
 			//condition = readJSONObject("minutely", "summary");
 		    latitude = (latLongs[0]);
 			longitude = (latLongs[1]);
+			city = (latLongs[2]);
+			
 			//latitude = "16.2455";
 			//longitude = "-89.0239";
 			
@@ -74,7 +76,7 @@ public class WeatherAppController implements Initializable
 			
 			// Sets various graphic component variables to information obtained
 			btn.setText("Search!");
-			output.setText(postcode);
+			output.setText(city);
 			
 			// Sets the summary condition
 			//summary.setText("Summary: " + condition);
@@ -179,7 +181,7 @@ public class WeatherAppController implements Initializable
 			else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
 				output.setText(status);
 			else
-				output.setText(postcode); // currently
+				output.setText(city); // currently
 			
 			// Sets the weather label's text to the temperature
 			if(errMsg.contains("currently")) // currently
@@ -226,6 +228,7 @@ public class WeatherAppController implements Initializable
 			String latLongs[] = getLatLongPositions(postcode);
 		    latitude = latLongs[0];
 			longitude = latLongs[1];
+			city = (latLongs[2]);
 			
 			// Captures the temperature from the API
 			temperature = readJSONObject("currently", "temperature");
@@ -353,9 +356,13 @@ public class WeatherAppController implements Initializable
         {
            expr = xpath.compile("//geometry/location/lat");
            String latitude = (String)expr.evaluate(document, XPathConstants.STRING);
+           
+           expr = xpath.compile("//result/formatted_address");
+           String formattedCity = (String)expr.evaluate(document, XPathConstants.STRING);
+           
            expr = xpath.compile("//geometry/location/lng");
            String longitude = (String)expr.evaluate(document, XPathConstants.STRING);
-           return new String[] {latitude, longitude};
+           return new String[] {latitude, longitude, formattedCity};
         }
         else
         {

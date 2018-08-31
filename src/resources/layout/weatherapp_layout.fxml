@@ -25,9 +25,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="output" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="116.0" prefHeight="27.0" prefWidth="262.0">
+            <Label fx:id="output" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="116.0" maxWidth="1000.0" prefHeight="27.0" prefWidth="262.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="12.0" />
                </font>
             </Label>
             <Label fx:id="summary" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="149.0" layoutY="154.0" prefHeight="17.0" prefWidth="298.0" />
