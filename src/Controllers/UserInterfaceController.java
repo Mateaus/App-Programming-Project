@@ -24,7 +24,7 @@ public class UserInterfaceController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        // We start reading from here//
+        // We start reading from here
 
     }
 
