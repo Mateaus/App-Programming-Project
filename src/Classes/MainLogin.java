@@ -11,7 +11,6 @@ public class MainLogin extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-
         // Load the first scene/screen, code can be modified but for now it's not necessary.
         Parent root = FXMLLoader.load(getClass().getResource("/resources/layout/login_layout.fxml"));
         Scene scene = new Scene(root);
