@@ -4,6 +4,7 @@ import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -24,6 +26,7 @@ public class LoginController implements Initializable {
     public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML private Button loginBtn;
+    @FXML private Pane logLayout;
     @FXML private TextField emailTF, passTF;
     @FXML private Label connectionLb;
 
@@ -37,9 +40,23 @@ public class LoginController implements Initializable {
         } else {
             connectionLb.setText("not connected");
         }
+
+        logLayout.setOnKeyPressed(
+                event -> {
+                    switch (event.getCode()) {
+                        case ENTER:
+                            checkLogin(null, event); // checks login information through key action event.
+                    }
+                }
+        );
     }
 
     public void changeToUIScreen(ActionEvent event) {
+        checkLogin(event, null); // checks login information through on action event.
+
+    }
+
+    private void checkLogin(ActionEvent event, KeyEvent keyEvent) {
         // Currently this is as placeholder until we are able to fetch data from DataBase
         String email = emailTF.getText().toString();
         String password = passTF.getText().toString();
@@ -47,14 +64,20 @@ public class LoginController implements Initializable {
             if(databaseStatus.isLogin(email, password)) {
                 UserInformation userInformation = new UserInformation(email, password);
                 UserInterface user = new UserInterface();
-                user.start(event, userInformation);
+                // checks for both OnAction event or KeyAction event.
+                if (event != null) {
+                    user.start(event, userInformation);
+                } else {
+                    if ( keyEvent != null) {
+                        user.start(keyEvent, userInformation);
+                    }
+                }
             } else {
                 connectionLb.setText("Wrong username or password");
             }
         } catch (Exception e) {
             connectionLb.setText("Wrong username or password");
         }
-
     }
 
     /* We will be calling this function every time we want to return to the main menu/log screen */
