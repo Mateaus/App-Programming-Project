@@ -7,27 +7,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserInterfaceController">
    <children>
-      <Pane layoutX="12.0" layoutY="10.0" prefHeight="750.0" prefWidth="1000.0">
+      <Pane layoutX="12.0" layoutY="10.0" prefHeight="750.0" prefWidth="1000.0" styleClass="uibodybg" stylesheets="@../CSS/style.css">
          <children>
-            <Pane prefHeight="150.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@../CSS/style.css">
+            <Pane prefHeight="150.0" prefWidth="1000.0" styleClass="uiheaderbg" stylesheets="@../CSS/style.css">
                <children>
-                  <Label text="Welcome" textAlignment="CENTER">
+                  <Label fx:id="studentLB" layoutX="554.0" layoutY="21.0" text="Username" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="63.0" />
                      </font>
                   </Label>
-                  <Label fx:id="studentLB" text="Username" textAlignment="CENTER">
+                  <Label layoutX="239.0" layoutY="21.0" text="Welcome" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="63.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="517.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@../CSS/style.css">
+            <Pane layoutY="150.0" prefHeight="600.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@../CSS/style.css">
                <children>
-                  <Button layoutX="99.0" layoutY="175.0" mnemonicParsing="false" onAction="#blackBoardApp" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20;" styleClass="blackboardapp" stylesheets="@../CSS/style.css" />
-                  <Button layoutX="500.0" layoutY="175.0" mnemonicParsing="false" onAction="#weatherApp" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Weather" />
-                  <Button layoutX="410.0" layoutY="535.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="181.0" text="Logout" />
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#blackBoardApp" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20;" styleClass="blackboardapp" stylesheets="@../CSS/style.css" />
+                  <Button layoutX="886.0" layoutY="14.0" mnemonicParsing="false" onAction="#weatherApp" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Weather" />
+                  <Button layoutX="410.0" layoutY="497.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="181.0" text="Logout" />
                </children>
             </Pane>
          </children></Pane>
