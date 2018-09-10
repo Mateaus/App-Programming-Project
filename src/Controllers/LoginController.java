@@ -4,7 +4,6 @@ import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -42,7 +41,7 @@ public class LoginController implements Initializable {
         }
 
         logLayout.setOnKeyPressed(
-                event -> {
+                 event -> {
                     switch (event.getCode()) {
                         case ENTER:
                             checkLogin(null, event); // checks login information through key action event.

@@ -19,7 +19,7 @@ public class UserInterface {
 
     private String email, password;
 
-    // Consturction for ActionEvent
+    // Constructor for ActionEvent
     public void start(ActionEvent event, UserInformation userInformation) throws Exception {
         // Loads userInterface layout.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
