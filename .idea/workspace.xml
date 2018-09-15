@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fluent_hc_4_5_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/httpclient_4_5_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jna_4_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HttpRequests/HttpHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HttpRequests/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_23_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_23_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Novus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Novus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-io-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-json.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Classes/UserInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Classes/UserInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Classes/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Classes/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/userInterface_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/layout/userInterface_layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/UserInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/registration_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/layout/registration_layout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsDB.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/studentsDB.sqlite" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+            <state relative-caret-position="255">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,12 +124,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration_layout.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registration_layout.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="21" column="89" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_layout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -240,10 +226,10 @@
         <option value="$PROJECT_DIR$/src/Database/SqliteConnection.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" />
         <option value="$PROJECT_DIR$/src/Classes/UserInterface.java" />
-        <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
         <option value="$PROJECT_DIR$/src/HttpRequests/RegisterRequest.java" />
         <option value="$PROJECT_DIR$/src/Controllers/RegistrationController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
       </list>
     </option>
   </component>
@@ -824,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Database/SqliteConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -843,14 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -915,11 +885,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="21" column="89" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
         </state>
       </provider>
     </entry>
