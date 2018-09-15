@@ -11,12 +11,12 @@
          <children>
             <Pane prefHeight="150.0" prefWidth="1000.0" styleClass="uiheaderbg" stylesheets="@../CSS/style.css">
                <children>
-                  <Label fx:id="studentLB" layoutX="554.0" layoutY="21.0" text="Username" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="studentLB" layoutX="452.0" layoutY="21.0" text="Username" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="63.0" />
                      </font>
                   </Label>
-                  <Label layoutX="239.0" layoutY="21.0" text="Welcome" textAlignment="CENTER" textFill="WHITE">
+                  <Label layoutX="148.0" layoutY="21.0" text="Welcome" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="63.0" />
                      </font>

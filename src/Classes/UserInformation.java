@@ -5,7 +5,6 @@ public class UserInformation {
     private String name, email, password;
 
     public UserInformation() {
-        return;
     }
 
     public UserInformation(String email, String password) {

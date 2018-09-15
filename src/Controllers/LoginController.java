@@ -3,6 +3,8 @@ package Controllers;
 import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
+import HttpRequests.HttpHandler;
+import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +17,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 
 public class LoginController implements Initializable {
@@ -60,22 +65,25 @@ public class LoginController implements Initializable {
         String email = emailTF.getText().toString();
         String password = passTF.getText().toString();
         try {
-            if(databaseStatus.isLogin(email, password)) {
-                UserInformation userInformation = new UserInformation(email, password);
-                UserInterface user = new UserInterface();
-                // checks for both OnAction event or KeyAction event.
-                if (event != null) {
-                    user.start(event, userInformation);
-                } else {
-                    if ( keyEvent != null) {
-                        user.start(keyEvent, userInformation);
-                    }
-                }
+            LoginRequest loginRequest = new LoginRequest(email, password);
+            HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
+            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+            String json = EntityUtils.toString(httpResponse.getEntity());
+            System.out.println(json);
+
+            UserInterface user = new UserInterface();
+
+            if(loginRequest.checkRequest(json).equals(true)){
+                   user.start(event, json);
+
+                   if (keyEvent != null) {
+                       user.start(keyEvent, json);
+                   }
             } else {
                 connectionLb.setText("Wrong username or password");
             }
         } catch (Exception e) {
-            connectionLb.setText("Wrong username or password");
+            System.out.println(e);
         }
     }
 

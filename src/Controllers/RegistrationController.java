@@ -1,10 +1,14 @@
 package Controllers;
 
 import Database.DatabaseStatus;
+import HttpRequests.HttpHandler;
+import HttpRequests.RegisterRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 
 import javax.rmi.CORBA.Util;
 import java.net.URL;
@@ -15,7 +19,7 @@ public class RegistrationController implements Initializable {
     public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML
-    private TextField nameTF, emailTF, passTF;
+    private TextField nameTF, usernameTF, passTF, ageTF;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -23,14 +27,17 @@ public class RegistrationController implements Initializable {
 
     public void registerUser(ActionEvent event) {
         String name = nameTF.getText().toString();
-        String email = emailTF.getText().toString();
+        String username = usernameTF.getText().toString();
         String password = passTF.getText().toString();
+        String age = ageTF.getText().toString();
         try {
-            if(nameTF != null && !name.isEmpty() && emailTF != null && !email.isEmpty() && passTF != null && !password.isEmpty()) {
-                databaseStatus.registerAccount(name, email, password);
+            if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
+                    && passTF != null && !password.isEmpty() && ageTF != null && !age.isEmpty()) {
+                RegisterRequest registerRequest = new RegisterRequest(name, username, password, age);
+                HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getValuePairs());
+                httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
                 LoginController loginController = new LoginController();
                 loginController.changeToMainScreen(event);
-                System.out.printf("Account registered\n");
             } else {
                 System.out.printf("Fill the blanks\n");
             }

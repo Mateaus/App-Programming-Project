@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.json.JSONObject;
 
 import java.sql.SQLException;
 
@@ -20,7 +21,7 @@ public class UserInterface {
     private String email, password;
 
     // Constructor for ActionEvent
-    public void start(ActionEvent event, UserInformation userInformation) throws Exception {
+    public void start(ActionEvent event, String Data) throws Exception {
         // Loads userInterface layout.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
         Pane userInterface = loader.load(); // userInterface holds the loader information
@@ -28,7 +29,10 @@ public class UserInterface {
 
         // Calling the controller class before we load it to pass information.
         UserInterfaceController userInterfaceController = loader.<UserInterfaceController>getController();
-        String studentName = getDBInformation(userInformation);
+        //String studentName = getDBInformation(userInformation);
+
+        JSONObject json = new JSONObject(Data);
+        String studentName = json.get("name").toString();
         userInterfaceController.setStudentName(studentName); // setStudentname to String studentName
 
         // Stage now under windows, calls scene and loads the scene.
@@ -38,7 +42,7 @@ public class UserInterface {
     }
 
     // Constructor for KeyEvent.
-    public void start(KeyEvent event, UserInformation userInformation) throws Exception {
+    public void start(KeyEvent event, String Data) throws Exception {
         // Loads userInterface layout.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
         Pane userInterface = loader.load(); // userInterface holds the loader information
@@ -46,7 +50,10 @@ public class UserInterface {
 
         // Calling the controller class before we load it to pass information.
         UserInterfaceController userInterfaceController = loader.<UserInterfaceController>getController();
-        String studentName = getDBInformation(userInformation);
+        //String studentName = getDBInformation(userInformation);
+
+        JSONObject json = new JSONObject(Data);
+        String studentName = json.get("name").toString();
         userInterfaceController.setStudentName(studentName); // setStudentname to String studentName
 
         // Stage now under windows, calls scene and loads the scene.
