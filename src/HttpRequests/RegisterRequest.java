@@ -9,13 +9,12 @@ import java.util.List;
 public class RegisterRequest {
 
     private static final String REGISTER_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Register.php";
-    private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(4);
+    private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
 
-    public RegisterRequest(String name, String username, String password, String age) {
+    public RegisterRequest(String name, String username, String password) {
         nameValuePairs.add(new BasicNameValuePair("name", name));
         nameValuePairs.add(new BasicNameValuePair("username", username));
         nameValuePairs.add(new BasicNameValuePair("password", password));
-        nameValuePairs.add(new BasicNameValuePair("age", age));
     }
 
     public String getRegisterRequestUrl() {

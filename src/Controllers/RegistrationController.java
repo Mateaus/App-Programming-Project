@@ -32,8 +32,8 @@ public class RegistrationController implements Initializable {
         String age = ageTF.getText().toString();
         try {
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
-                    && passTF != null && !password.isEmpty() && ageTF != null && !age.isEmpty()) {
-                RegisterRequest registerRequest = new RegisterRequest(name, username, password, age);
+                    && passTF != null && !password.isEmpty()) {
+                RegisterRequest registerRequest = new RegisterRequest(name, username, password);
                 HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getValuePairs());
                 httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
                 LoginController loginController = new LoginController();

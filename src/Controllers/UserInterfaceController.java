@@ -1,15 +1,21 @@
 package Controllers;
 
+import Classes.Context;
 import Database.DatabaseStatus;
+import HttpRequests.ActivityRequest;
+import HttpRequests.HttpHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,12 +25,42 @@ public class UserInterfaceController implements Initializable {
 
     public DatabaseStatus databaseStatus = new DatabaseStatus();
 
-    private String email, password;
     @FXML private Label studentLB;
+    @FXML private Button logoutBtn;
+    private String studentId;
 
-
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         // We start reading from here
+        studentLB.setText(Context.getInstance().currentUserInformation().getStudentName());
+        System.out.println(Context.getInstance().currentUserInformation().getStudentId());
+        System.out.println(Context.getInstance().currentUserInformation().getStudentName());
+        try{
+            String studentId = Context.getInstance().currentUserInformation().getStudentId();
+            ActivityRequest activityRequest = new ActivityRequest(studentId, "online");
+            HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
+            httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        logoutBtn.setOnAction(
+                event -> {
+                    try {
+                        String studentId = Context.getInstance().currentUserInformation().getStudentId();
+                        ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
+                        HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
+                        httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+
+                        LoginController loginController = new LoginController();
+                        loginController.changeToMainScreen(event);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+        );
+
 
     }
 
@@ -56,11 +92,25 @@ public class UserInterfaceController implements Initializable {
 
     
     public void logOut(ActionEvent event) throws Exception {
+        String studentId = Context.getInstance().currentUserInformation().getStudentId();
+        System.out.println(studentId);
+        ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
+        HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
+        httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+
         LoginController loginController = new LoginController();
         loginController.changeToMainScreen(event);
     }
 
     public void setStudentName(String student) {
         this.studentLB.setText(student);
+    }
+
+    public void setStudentId(String student) {
+        this.studentId = student;
+    }
+
+    public String getStudentId() {
+        return this.studentId;
     }
 }

@@ -62,13 +62,13 @@ public class UserInterface {
         windows.show();
     }
 
-    public String getDBInformation(UserInformation userInformation) throws SQLException {
+    /*public String getDBInformation(UserInformation userInformation) throws SQLException {
         this.email = userInformation.getEmail();
         this.password = userInformation.getPassword();
         String studentName = databaseStatus.searchName(this.email, this.password);
 
         return studentName;
-    }
+    }*/
 
 
 }

@@ -1,5 +1,6 @@
 package Controllers;
 
+import Classes.Context;
 import Classes.UserInformation;
 import Classes.UserInterface;
 import Database.DatabaseStatus;
@@ -19,8 +20,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
@@ -34,6 +37,8 @@ public class LoginController implements Initializable {
     @FXML private TextField emailTF, passTF;
     @FXML private Label connectionLb;
 
+    private String email, password;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Any actions done to buttons,etc will be passed through here first.
@@ -45,46 +50,77 @@ public class LoginController implements Initializable {
             connectionLb.setText("not connected");
         }
 
+        loginBtn.setOnAction(
+                event -> {
+                    email = emailTF.getText().toString();
+                    password = passTF.getText().toString();
+                    try {
+                        LoginRequest loginRequest = new LoginRequest(email, password);
+                        HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
+                        HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+                        String responsejson = EntityUtils.toString(httpResponse.getEntity());
+
+                        JSONObject jsonObject = new JSONObject(responsejson);
+                        String studentId = jsonObject.get("user_id").toString();
+                        String studentName = jsonObject.get("name").toString();
+                        Context.getInstance().currentUserInformation().setStudentId(studentId);
+                        Context.getInstance().currentUserInformation().setStudentName(studentName);
+
+                        if(loginRequest.checkRequest(responsejson).equals(true)){
+                            // Stage now under windows, calls scene and loads the scene.
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
+                            Pane userInterface = loader.load(); // userInterface holds the loader information
+                            Scene scene = new Scene(userInterface); // new scene holding userInterface
+
+                            Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window;
+                            windows.setScene(scene);
+                            windows.show();
+                        } else {
+                            connectionLb.setText("Wrong username or password");
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+        );
+
         logLayout.setOnKeyPressed(
                  event -> {
                     switch (event.getCode()) {
                         case ENTER:
-                            checkLogin(null, event); // checks login information through key action event.
+                            email = emailTF.getText().toString();
+                            password = passTF.getText().toString();
+                            try {
+                                LoginRequest loginRequest = new LoginRequest(email, password);
+                                HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
+                                HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+                                String responsejson = EntityUtils.toString(httpResponse.getEntity());
+
+                                JSONObject jsonObject = new JSONObject(responsejson);
+                                String studentId = jsonObject.get("user_id").toString();
+                                String studentName = jsonObject.get("name").toString();
+                                Context.getInstance().currentUserInformation().setStudentId(studentId);
+                                Context.getInstance().currentUserInformation().setStudentName(studentName);
+
+                                if(loginRequest.checkRequest(responsejson).equals(true)){
+                                    // Stage now under windows, calls scene and loads the scene.
+                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
+                                    Pane userInterface = loader.load(); // userInterface holds the loader information
+                                    Scene scene = new Scene(userInterface); // new scene holding userInterface
+                                    // Calling the controller class before we load it to pass information.
+
+                                    Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window;
+                                    windows.setScene(scene);
+                                    windows.show();
+                                } else {
+                                    connectionLb.setText("Wrong username or password");
+                                }
+                            } catch(Exception e) {
+
+                            }
                     }
                 }
         );
-    }
-
-    public void changeToUIScreen(ActionEvent event) {
-        checkLogin(event, null); // checks login information through on action event.
-
-    }
-
-    private void checkLogin(ActionEvent event, KeyEvent keyEvent) {
-        // Currently this is as placeholder until we are able to fetch data from DataBase
-        String email = emailTF.getText().toString();
-        String password = passTF.getText().toString();
-        try {
-            LoginRequest loginRequest = new LoginRequest(email, password);
-            HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
-            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-            String json = EntityUtils.toString(httpResponse.getEntity());
-            System.out.println(json);
-
-            UserInterface user = new UserInterface();
-
-            if(loginRequest.checkRequest(json).equals(true)){
-                   user.start(event, json);
-
-                   if (keyEvent != null) {
-                       user.start(keyEvent, json);
-                   }
-            } else {
-                connectionLb.setText("Wrong username or password");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
     }
 
     /* We will be calling this function every time we want to return to the main menu/log screen */

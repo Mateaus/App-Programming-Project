@@ -2,43 +2,29 @@ package Classes;
 
 public class UserInformation {
 
-    private String name, email, password;
+    private String studentId, studentName;
 
     public UserInformation() {
     }
 
-    public UserInformation(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public UserInformation(String studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
     }
 
-    public UserInformation(String name, String email, String password){
-        this.name = name;
-        this.email = email;
-        this.password = password;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public String getName() {
-        return name;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 }
