@@ -34,7 +34,8 @@ public class RegistrationController implements Initializable {
                     && passTF != null && !password.isEmpty()) {
                 RegisterRequest registerRequest = new RegisterRequest(name, username, password);
                 HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getValuePairs());
-                httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+                HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+                EntityUtils.consume(httpResponse.getEntity());
                 LoginController loginController = new LoginController();
                 loginController.changeToMainScreen(event);
             } else {

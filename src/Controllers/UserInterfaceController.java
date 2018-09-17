@@ -37,8 +37,6 @@ public class UserInterfaceController implements Initializable {
     private String studentId;
     private volatile boolean isRunning = true;
 
-    Timer t = new Timer();
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // We start reading from here
@@ -49,7 +47,8 @@ public class UserInterfaceController implements Initializable {
             String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "online");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
-            httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+            EntityUtils.consume(httpResponse.getEntity());
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -59,6 +58,7 @@ public class UserInterfaceController implements Initializable {
             HttpHandler httpHandler = new HttpHandler(statusRequest.getStatusRequestUrl(), statusRequest.getValuePairs());
             HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
             String json = EntityUtils.toString(httpResponse.getEntity());
+            EntityUtils.consume(httpResponse.getEntity());
             JSONObject jsonObject = new JSONObject(json);
             int studentsAvailable = Integer.parseInt(jsonObject.getJSONObject("available").get("number").toString());
             String studentNames = "";
@@ -85,6 +85,7 @@ public class UserInterfaceController implements Initializable {
                                 HttpHandler httpHandler = new HttpHandler(statusRequest.getStatusRequestUrl(), statusRequest.getValuePairs());
                                 HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
                                 String json = EntityUtils.toString(httpResponse.getEntity());
+                                EntityUtils.consume(httpResponse.getEntity());
                                 JSONObject jsonObject = new JSONObject(json);
                                 int studentsAvailable = Integer.parseInt(jsonObject.getJSONObject("available").get("number").toString());
                                 String studentNames = "";

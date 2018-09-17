@@ -95,6 +95,7 @@ public class LoginController implements Initializable {
                                 HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
                                 HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
                                 String responsejson = EntityUtils.toString(httpResponse.getEntity());
+                                EntityUtils.consume(httpResponse.getEntity());
 
                                 JSONObject jsonObject = new JSONObject(responsejson);
                                 String studentId = jsonObject.get("user_id").toString();
