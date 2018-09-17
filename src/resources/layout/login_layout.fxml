@@ -20,7 +20,7 @@
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label layoutX="380.0" layoutY="290.0" style="-fx-font-weight: bold; -fx-font-family: Candara;" text="EMAIL" textFill="#b5b5b5" />
+                <Label layoutX="380.0" layoutY="290.0" style="-fx-font-weight: bold; -fx-font-family: Candara;" text="USERNAME" textFill="#b5b5b5" />
                 <TextField fx:id="emailTF" layoutX="380.0" layoutY="310.0" prefWidth="250.0" style="-fx-background-color: #ffffff00;">
                     <font>
                         <Font size="15.0" />

@@ -4,6 +4,7 @@ import Classes.Context;
 import Database.DatabaseStatus;
 import HttpRequests.ActivityRequest;
 import HttpRequests.HttpHandler;
+import HttpRequests.StatusRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +28,7 @@ public class UserInterfaceController implements Initializable {
     public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML private Label studentLB;
+    @FXML private Label studentsnmLB;
     @FXML private Button logoutBtn;
     private String studentId;
 
@@ -35,11 +38,29 @@ public class UserInterfaceController implements Initializable {
         studentLB.setText(Context.getInstance().currentUserInformation().getStudentName());
         System.out.println(Context.getInstance().currentUserInformation().getStudentId());
         System.out.println(Context.getInstance().currentUserInformation().getStudentName());
-        try{
+
+        try {
             String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "online");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
             httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            StatusRequest statusRequest = new StatusRequest("online");
+            HttpHandler httpHandler = new HttpHandler(statusRequest.getStatusRequestUrl(), statusRequest.getValuePairs());
+            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+            String json = EntityUtils.toString(httpResponse.getEntity());
+            JSONObject jsonObject = new JSONObject(json);
+            int studentsAvailable = Integer.parseInt(jsonObject.getJSONObject("available").get("number").toString());
+            String studentNames = "";
+            for (int i = 0; i < studentsAvailable; i++) {
+                studentNames = studentNames + "-" + jsonObject.getJSONObject("student"+i).get("name").toString() + "\n";
+            }
+            System.out.println(studentNames);
+            studentsnmLB.setText(studentNames);
         } catch (Exception e) {
             System.out.println(e);
         }

@@ -19,7 +19,7 @@ public class RegistrationController implements Initializable {
     public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML
-    private TextField nameTF, usernameTF, passTF, ageTF;
+    private TextField nameTF, usernameTF, passTF;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -29,7 +29,6 @@ public class RegistrationController implements Initializable {
         String name = nameTF.getText().toString();
         String username = usernameTF.getText().toString();
         String password = passTF.getText().toString();
-        String age = ageTF.getText().toString();
         try {
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty()) {
