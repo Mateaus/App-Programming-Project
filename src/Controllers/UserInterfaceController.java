@@ -1,7 +1,6 @@
 package Controllers;
 
 import Classes.Context;
-import Database.DatabaseStatus;
 import HttpRequests.ActivityRequest;
 import HttpRequests.HttpHandler;
 import HttpRequests.StatusRequest;
@@ -28,8 +27,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class UserInterfaceController implements Initializable {
-
-    public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML private Label studentLB;
     @FXML private Label studentsnmLB;

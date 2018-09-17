@@ -1,6 +1,5 @@
 package Controllers;
 
-import Database.DatabaseStatus;
 import HttpRequests.HttpHandler;
 import HttpRequests.RegisterRequest;
 import javafx.event.ActionEvent;
@@ -15,8 +14,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegistrationController implements Initializable {
-
-    public DatabaseStatus databaseStatus = new DatabaseStatus();
 
     @FXML
     private TextField nameTF, usernameTF, passTF;
