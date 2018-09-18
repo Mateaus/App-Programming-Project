@@ -20,11 +20,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class UserInterfaceController implements Initializable {
 
@@ -36,24 +33,27 @@ public class UserInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // We start reading from here
-        Boolean flag = true;
+        // We get the name from our global class which we stored from the previous scene.
         studentLB.setText(Context.getInstance().currentUserInformation().getStudentName());
-
         try {
+            /*
+             * Request to the database to change anyone who logged in to be set as "online" status in the
+             * database server.
+             */
             String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "online");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
             HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
             EntityUtils.consume(httpResponse.getEntity());
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
-        try {
+            /*
+             * Request to the database to look everyone who's status is currently "online" and to get their names.
+             * We then set our test label "studentsnmLB" to be equals to the string of all the names we gathered
+             * from the database.
+             */
             StatusRequest statusRequest = new StatusRequest("online");
-            HttpHandler httpHandler = new HttpHandler(statusRequest.getStatusRequestUrl(), statusRequest.getValuePairs());
-            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+            httpHandler = new HttpHandler(statusRequest.getStatusRequestUrl(), statusRequest.getValuePairs());
+            httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
             String json = EntityUtils.toString(httpResponse.getEntity());
             EntityUtils.consume(httpResponse.getEntity());
             JSONObject jsonObject = new JSONObject(json);
@@ -67,6 +67,7 @@ public class UserInterfaceController implements Initializable {
         } catch (Exception e) {
             System.out.println(e);
         }
+
         // TODO: Write a cleaner thread and make it stop when not being used.
         Task task = new Task<Void>() {
             @Override
@@ -123,8 +124,6 @@ public class UserInterfaceController implements Initializable {
 
                 }
         );
-
-
     }
 
     public void blackBoardApp(ActionEvent event) throws Exception {
@@ -151,18 +150,6 @@ public class UserInterfaceController implements Initializable {
         Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window
         windows.setScene(scene);
         windows.show();
-    }
-
-    
-    public void logOut(ActionEvent event) throws Exception {
-        String studentId = Context.getInstance().currentUserInformation().getStudentId();
-        System.out.println(studentId);
-        ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
-        HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
-        httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-
-        LoginController loginController = new LoginController();
-        loginController.changeToMainScreen(event);
     }
 
     public void setStudentName(String student) {
