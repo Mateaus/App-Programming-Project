@@ -9,7 +9,7 @@ import java.util.List;
 
 public class StatusRequest {
 
-    private static final String STATUS_REQUEST_URL = "https://last-minute-screws.000webhostapp.com/Status.php";
+    private static final String STATUS_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Status.php";
     private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
 
     public StatusRequest(String status) throws Exception {
