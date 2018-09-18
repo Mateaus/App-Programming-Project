@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpRequests/StatusRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpRequests/StatusRequest.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInterfaceController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserInterfaceController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/UserInterfaceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="48">
               <caret line="125" column="10" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -146,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatusRequest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StatusRequest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="187">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -212,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/Classes/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/Classes/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/ActivityRequest.java" />
-        <option value="$PROJECT_DIR$/src/HttpRequests/StatusRequest.java" />
         <option value="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
@@ -220,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/Controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/HttpHandler.java" />
         <option value="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" />
+        <option value="$PROJECT_DIR$/src/HttpRequests/StatusRequest.java" />
       </list>
     </option>
   </component>
@@ -513,12 +512,12 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053996" side_tool="true" weight="0.255079" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946004" visible="true" weight="0.23687151" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946004" weight="0.23687151" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32844242" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3329609" />
+      <window_info anchor="bottom" id="Terminal" order="13" visible="true" weight="0.3329609" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24413647" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24413647" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24972376" />
@@ -817,16 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Database/DatabaseStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-369">
@@ -908,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/UserInterfaceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="48">
           <caret line="125" column="10" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -920,6 +909,16 @@
             <element signature="e#7608#7609#0" expanded="true" />
             <element signature="e#7644#7645#0" expanded="true" />
             <element signature="e#7681#7682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
