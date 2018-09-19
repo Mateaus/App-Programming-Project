@@ -1,6 +1,5 @@
 package Controllers;
 
-import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -18,7 +17,6 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
 import org.apache.commons.io.IOUtils;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 
@@ -28,7 +26,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -46,59 +43,55 @@ public class WeatherAppController implements Initializable
 	@FXML private ImageView img;
 	@FXML private TextField cityLocation;
 	@FXML private ProgressIndicator progIndicator;
-	private String latitude, longitude, developerAPIKey;
-	private String temperature, condition, status, errMsg = "None";
-	private String icon, postcode = "San Antonio";
-
+	private String latitude, longitude, 
+	//developerAPIKey = "da16336962592e022a90a30895ec83b3"; // Charles's developer key
+	temperature, condition, status = "OK", errMsg = "None",
+	icon, postcode = "San Antonio", formattedAddress;
+	// If the site returns an error with retrieving information
+	//  then update the key to a new key
+	private String developerAPIKey = "714eda33e43cde0ca430cedc8fa306a7"; // Ko's developer key
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
-		// Trys to obtain information from text field
-		try
+		progIndicator.setOpacity(0);
+		// Sets various graphic component variables to information obtained
+		btn.setText("Search!");
+		output.setWrapText(true);
+		
+		/* San Antonio's latitude and longitude
+		 *	latitude = "29.424349";
+		 *	longitude = "-98.491142"; 
+		*/
+		
+    	String latLongs[];
+		try 
 		{
-			// Sets the post code to the value in the city location text field
-			String latLongs[] = getLatLongPositions(postcode);
-			//condition = readJSONObject("minutely", "summary");
-		    latitude = (latLongs[0]);
-			longitude = (latLongs[1]);
-			//latitude = "16.2455";
-			//longitude = "-89.0239";
-			
-			// Sets developer key from api to default
-			//developerAPIKey = "da16336962592e022a90a30895ec83b3"; // my developer key
-			
-			// If the site returns an error with retrieving information
-        	//  then update the key to a new key
-        	developerAPIKey = "714eda33e43cde0ca430cedc8fa306a7"; // Ko's developer key
-			progIndicator.setOpacity(0);
-			
-			// Sets various graphic component variables to information obtained
-			btn.setText("Search!");
-			output.setText(postcode);
-			
-			// Sets the summary condition
-			//summary.setText("Summary: " + condition);
-		    
-			// Sets the temperature, icon, and weather to original values
-			temperature = readJSONObject("currently", "temperature");
-			condition = readJSONObject("minutely", "summary");
-			icon = readJSONObject("currently", "icon");
-			Weather.setText(temperature);
-			summary.setText(condition);
-			currentWeather(icon);
-		}
-		catch(Exception e)
+			latLongs = tryLatLongsUntilSuccess(postcode);
+			if(latLongs != null)
+			{
+				latitude = latLongs[0];
+				longitude = latLongs[1];
+				tryWeatherCaptureUntilSuccess();
+			}
+			weatherDataCapture();
+			setLabels();
+		} 
+		catch (Exception e) 
 		{
-			System.out.println(e);
+			
 		}
+		output.setText(formattedAddress);
 	}
 	
 	public void button(ActionEvent event) throws Exception
 	{
 		progIndicator.setOpacity(1);
 		progIndicator.setProgress(-1);
-		startThread(); 
 		
+		// Sets the post code to the value in the city location text field
+		postcode = cityLocation.getText();
+		startThread();
 	}
 	
 	public void returnToUI(ActionEvent event) throws Exception
@@ -123,11 +116,16 @@ public class WeatherAppController implements Initializable
 			@Override
             protected String doInBackground() throws Exception 
             {
-                // define what thread will do here
-            	runtime();
-                Thread.sleep(50);
+    			// define what thread will do here
+            	String latLongs[] = tryLatLongsUntilSuccess(postcode);
+        		if(latLongs != null)
+        		{
+        			latitude = latLongs[0];
+        			longitude = latLongs[1];
+        			tryWeatherCaptureUntilSuccess();
+        		}
+        		Thread.sleep(50);
                 publish(1);
-                
                 String res = "Finished Execution";
                 return res;
             }
@@ -147,11 +145,30 @@ public class WeatherAppController implements Initializable
                 // this method is called when the background 
                 // thread finishes execution
         		progIndicator.setOpacity(0);
-        		Platform.runLater(new Runnable() {
+        		Platform.runLater(new Runnable() 
+        		{
         	        @Override
-        	        public void run() {
-        	          //javaFX operations should go here
-        	        	setLabels();
+        	        public void run() 
+        	        {
+        	            //javaFX operations should go here
+        	        	if(errMsg.equals("none"))
+        	        	{
+        	        		summary.setText(null);
+        	        		output.setText("Location Not Available");
+        	        		Weather.setText(null);
+        	        		img.setOpacity(0);
+        	        	}
+        	        	else if(errMsg.equals("ZERO_RESULTS"))
+        	        	{
+        	        		summary.setText(null);
+        	        		output.setText("Location Not Available");
+        	        		Weather.setText(null);
+        	        		img.setOpacity(0);
+        	        	}
+        	        	else
+        	        	{
+        	        		setLabels();
+        	        	}
         	        }
         	   });
             }
@@ -165,77 +182,29 @@ public class WeatherAppController implements Initializable
 		// I changed the progressbar to a progress indicator so it would visually look better
 		if(status.equals("OK"))
 		{	
-			// Updates the summary condition
-			if(errMsg.contains("minutely")) // minutely
-				summary.setText("Summary for location is not available.");
-			else if(errMsg.contains("OVER")) // if over allowed query
-				summary.setText("");
-			else
-				summary.setText(condition);
-			
-			// Sets the output label to the current address from the city location text field
-			if(errMsg.contains("currently") || errMsg.contains("OVER"))
-				output.setText("Location not available.");
-			else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-				output.setText(status);
-			else
-				output.setText(postcode); // currently
-			
-			// Sets the weather label's text to the temperature
-			if(errMsg.contains("currently")) // currently
-				Weather.setText("temperature for location is not available.");
-			else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-				Weather.setText("");
-			else
-				Weather.setText(temperature);
-			
-			// Sets the weather icon
-			if(errMsg.startsWith("currently")) // currently
-				img.setOpacity(0);
-			else if(errMsg.contains("OVER")) // if over daily allowed amount of queries
-				img.setOpacity(0);
-			else
-			{
-				img.setOpacity(1);
-				currentWeather(icon); 
-			}
-			errMsg = "None"; // Resets error message to no errors
-		}
-		else
-		{
-			// Updates the summary condition
-			summary.setText(null);
-			// Sets the output label to the current address from the city location text field
-			output.setText(status);
-			// Sets the weather label's text to the temperature
-			Weather.setText(null);
-			// Sets the weather icon
-			img.setOpacity(0);
+			summary.setText(condition);
+			output.setText(formattedAddress);
+			Weather.setText(temperature);
+			img.setOpacity(1);
+			currentWeather(icon); 
 		}
 	}
 	
-	public double runtime()
+	public void weatherDataCapture()
 	{
-		double totalTime;
-		long beginingTime = System.nanoTime();
 		// Trys to obtain information from text field
 		try
-		{
-			// Sets the post code to the value in the city location text field
-			postcode = cityLocation.getText();
-			String latLongs[] = getLatLongPositions(postcode);
-		    latitude = latLongs[0];
-			longitude = latLongs[1];
-			
+		{	
 			// Captures the temperature from the API
 			temperature = readJSONObject("currently", "temperature");
 			condition = readJSONObject("minutely", "summary");
-			JSONArray tokens = new JSONArray(readJSONObject("minutely", "data"));
+			/* tokenizes the information in order to get more precise data from API
+			JSONArray tokens = new JSONArray(readJSONObject("minutely", "data")); */
 			
 			// Captures the Icon message from the API
 			icon = readJSONObject("currently", "icon");
 			
-			// Use for daily forecast
+			/* Use for daily forecast
 			for(int i = 0; i < tokens.length(); i++) // Can change to 7 to get weekly forecast
 			{
 				JSONObject jObj = tokens.getJSONObject(i);
@@ -244,18 +213,35 @@ public class WeatherAppController implements Initializable
 				String intensity = jObj.get("precipIntensity").toString();
 				String time = jObj.get("time").toString();
 				System.out.println(condition + "\nProbability: " +probability + "\n" + "Intensity: " + intensity + 
-								   "\n" + "Time: "+ time + "\n");*/
-			}    
+								   "\n" + "Time: "+ time + "\n");
+			}*/
 		}        
 		catch(Exception err) // Throws an error
 		{
-			errMsg = err + "";
+			errMsg = err + ""; // Stores error in variable
 		}
-		long endTime = System.nanoTime();
-		totalTime = beginingTime - endTime;
-		return totalTime / 1000000000;
 	}
 	
+	private void tryWeatherCaptureUntilSuccess()
+	{
+		weatherDataCapture();
+		if(!errMsg.equals("None") && !errMsg.contains("minutely"))
+		{
+			while(!errMsg.equals("None"))
+			{
+				weatherDataCapture();
+			}
+		}
+		else if(errMsg.contains("minutely"))
+		{
+			return;
+		}
+		else if(errMsg.contains("ZERO_RESULTS"))
+		{
+			return;
+		}
+	}
+
 	// Sets the weather image to the corresponding image
 	private void currentWeather(String condition)
 	{
@@ -333,35 +319,55 @@ public class WeatherAppController implements Initializable
 	
 	// Obtains the latitude and longitude of every address in the world, reading the information 
 	//   in via an XML file
-	public String[] getLatLongPositions(String address) throws Exception
+	private String[] getLatLongPositions(String address) throws Exception
     {
-      int responseCode = 0;
-      String api = "http://maps.googleapis.com/maps/api/geocode/xml?address=" + URLEncoder.encode(address, "UTF-8") + "&sensor=true";
-      URL url = new URL(api);
-      HttpURLConnection httpConnection = (HttpURLConnection)url.openConnection();
-      httpConnection.connect();
-      responseCode = httpConnection.getResponseCode();
-      if(responseCode == 200)
-      {
-        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document document = builder.parse(httpConnection.getInputStream());
-        XPathFactory xPathfactory = XPathFactory.newInstance();
-        XPath xpath = xPathfactory.newXPath();
-        XPathExpression expr = xpath.compile("/GeocodeResponse/status");
-        status = (String)expr.evaluate(document, XPathConstants.STRING);
-        if(status.equals("OK"))
-        {
-           expr = xpath.compile("//geometry/location/lat");
-           String latitude = (String)expr.evaluate(document, XPathConstants.STRING);
-           expr = xpath.compile("//geometry/location/lng");
-           String longitude = (String)expr.evaluate(document, XPathConstants.STRING);
-           return new String[] {latitude, longitude};
-        }
-        else
-        {
-        	throw new Exception("Error from the API - response status: "+ status);
-        }
-      }
-      return null;
-  }
+		int responseCode = 0;
+		String api = "http://maps.googleapis.com/maps/api/geocode/xml?address=" + URLEncoder.encode(address, "UTF-8") + "&sensor=true";
+		URL url = new URL(api);
+		HttpURLConnection httpConnection = (HttpURLConnection)url.openConnection();
+		httpConnection.connect();
+		responseCode = httpConnection.getResponseCode();
+		if(responseCode == 200)
+		{
+			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document document = builder.parse(httpConnection.getInputStream());
+			XPathFactory xPathfactory = XPathFactory.newInstance();
+			XPath xpath = xPathfactory.newXPath();
+			XPathExpression expr = xpath.compile("/GeocodeResponse/status");
+			status = (String)expr.evaluate(document, XPathConstants.STRING);
+			if(status.equals("OK"))
+  	      	{
+  	           	expr = xpath.compile("//geometry/location/lat");
+  	           	String latitude = (String)expr.evaluate(document, XPathConstants.STRING);
+  	           	expr = xpath.compile("//geometry/location/lng");
+  	           	String longitude = (String)expr.evaluate(document, XPathConstants.STRING);
+  	           	expr = xpath.compile("//result/formatted_address");
+	           	formattedAddress = (String)expr.evaluate(document, XPathConstants.STRING);
+  	           	errMsg = "None";
+  	           	return new String[] {latitude, longitude, formattedAddress};
+  	      	}
+			else
+			{
+				errMsg = (status);
+			}
+		}
+		return null;
+    }
+	
+	private String[] tryLatLongsUntilSuccess(String address) throws Exception
+	{
+		String[] result = getLatLongPositions(address);
+		if(errMsg.equals("ZERO_RESULTS"))
+		{
+			return null;
+		}
+		else if(!errMsg.equals("None"))
+		{
+			while(!errMsg.equals("None"))
+			{
+				result = getLatLongPositions(address);
+			}
+		}
+		return result;
+	}
 }
