@@ -1,5 +1,13 @@
-.bodybg{
+.logbodybg{
     -fx-background-image: url("/resources/drawable/utsa.png");
+}
+
+.uibodybg{
+    -fx-background-image: url("/resources/drawable/utsacolor.png");
+}
+
+.uiheaderbg{
+    -fx-background-image: url("/resources/drawable/utsaheadercolor.png");
 }
 
 .blackboardapp{
