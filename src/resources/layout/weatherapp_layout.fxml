@@ -25,7 +25,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="output" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="116.0" prefHeight="27.0" prefWidth="262.0">
+            <Label fx:id="output" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="116.0" prefHeight="38.0" prefWidth="326.0" textOverrun="WORD_ELLIPSIS" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
