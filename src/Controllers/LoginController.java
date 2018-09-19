@@ -1,6 +1,9 @@
 package Controllers;
 
 import Classes.Context;
+import Classes.UserInformation;
+import Classes.UserInterface;
+import Database.DatabaseStatus;
 import HttpRequests.HttpHandler;
 import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
@@ -27,6 +30,8 @@ import java.util.concurrent.ExecutionException;
 
 public class LoginController implements Initializable {
 
+    public DatabaseStatus databaseStatus = new DatabaseStatus();
+
     @FXML private Button loginBtn;
     @FXML private Pane logLayout;
     @FXML private TextField emailTF, passTF;
@@ -39,6 +44,11 @@ public class LoginController implements Initializable {
         // Any actions done to buttons,etc will be passed through here first.
         // Example: Button1 changes when it's pressed. It will read this function
         // to fetch the action.
+        if(databaseStatus.isDBConnected()) {
+            connectionLb.setText("connected");
+        } else {
+            connectionLb.setText("not connected");
+        }
 
         loginBtn.setOnAction(
                 event -> {
