@@ -8,25 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Classes/MainLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Classes/MainLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/StatusRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/HttpRequests/StatusRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/login_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/layout/login_layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/registration_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/layout/registration_layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/MainLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MainLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/login_remake.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/login_remake.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,8 +82,20 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1456">
-              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="2590">
+              <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/RegistrationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-215">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,8 +106,18 @@
       <file leaf-file-name="login_layout.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+            <state relative-caret-position="510">
+              <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="registration_layout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
@@ -177,21 +185,22 @@
         <option value="$PROJECT_DIR$/src/Classes/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/ActivityRequest.java" />
         <option value="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" />
-        <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
         <option value="$PROJECT_DIR$/src/HttpRequests/HttpHandler.java" />
         <option value="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/StatusRequest.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/RegistrationController.java" />
         <option value="$PROJECT_DIR$/src/Classes/MainLogin.java" />
         <option value="$PROJECT_DIR$/src/resources/layout/login_remake.fxml" />
         <option value="$PROJECT_DIR$/src/Controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/resources/CSS/style.css" />
+        <option value="$PROJECT_DIR$/src/Controllers/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/registration_remake.fxml" />
+        <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="50" />
     <option name="y" value="40" />
     <option name="width" value="1591" />
@@ -206,6 +215,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Novus" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Novus" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -265,17 +285,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Novus" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Novus" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,13 +308,6 @@
               <item name="Novus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Novus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
@@ -487,7 +489,7 @@
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3329609" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20628998" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20842217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24972376" />
       <window_info id="UI Designer" order="3" />
@@ -500,12 +502,12 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
       <window_info anchor="bottom" id="Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Profiler" order="9" />
       <window_info anchor="bottom" id="Problems" order="10" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Application Servers" order="11" />
+      <window_info anchor="right" id="Database" order="6" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -561,13 +563,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Classes/MainLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="83" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -729,14 +724,6 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpRequests/RegisterRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -789,17 +776,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/login_remake.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2590">
+          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/login_remake.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="21" lean-forward="true" selection-end-line="87" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
@@ -825,10 +815,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_remake.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1456">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="388">
+          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -837,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+        <state relative-caret-position="510">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />

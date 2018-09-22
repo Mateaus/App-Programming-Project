@@ -5,8 +5,11 @@ import HttpRequests.RegisterRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
@@ -20,6 +23,8 @@ public class RegistrationController implements Initializable {
     
     @FXML
     private Label errorMessage;
+
+    private double x, y;
 
     public void initialize(URL location, ResourceBundle resources) {
     	
@@ -57,5 +62,45 @@ public class RegistrationController implements Initializable {
     public void changeToMainScreen(ActionEvent event) throws Exception {
         LoginController loginController = new LoginController();
         loginController.changeToMainScreen(event);
+    }
+
+    /*
+     *  The methods below are used for the only purpose of controlling the customized created
+     *  toolbar.
+     *
+     *  toolbarDragging methods helps us move the scene by dragging on the toolbar area.
+     */
+    public void toolbarDragging(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.setX(mouseEvent.getScreenX() - x);
+        stage.setY(mouseEvent.getScreenY() - y);
+    }
+
+    /*
+     * toolbarPressed gets us the x and y values to then be used on toolbarDragging
+     * as we click on the toolbar location.
+     */
+
+    public void toolbarPressed(MouseEvent mouseEvent) {
+        x = mouseEvent.getSceneX();
+        y = mouseEvent.getSceneY();
+    }
+
+    /*
+     * toolbarMinimize is utilized to minimize the screen.
+     */
+
+    public void toolbarMinimize(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    /*
+     * toolbarExit is utilized to exit the screen.
+     */
+
+    public void toolbarExit(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 }
