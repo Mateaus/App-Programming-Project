@@ -1,6 +1,7 @@
 package Controllers;
 
 import Classes.Context;
+import Classes.UserInterface;
 import HttpRequests.HttpHandler;
 import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
@@ -58,14 +59,8 @@ public class LoginController implements Initializable {
                         Context.getInstance().currentUserInformation().setStudentName(studentName);
 
                         if(loginRequest.checkRequest(responsejson).equals(true)){
-                            // Stage now under windows, calls scene and loads the scene.
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
-                            Pane userInterface = loader.load(); // userInterface holds the loader information
-                            Scene scene = new Scene(userInterface); // new scene holding userInterface
-
-                            Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window;
-                            windows.setScene(scene);
-                            windows.show();
+                            UserInterface userInterface = new UserInterface();
+                            userInterface.startUI(event, null);
                         } else {
                             //TODO: Add something to show user they have entered wrong username or password.
                             System.out.println("Wrong password");
@@ -96,15 +91,8 @@ public class LoginController implements Initializable {
                                 Context.getInstance().currentUserInformation().setStudentName(studentName);
 
                                 if(loginRequest.checkRequest(responsejson).equals(true)){
-                                    // Stage now under windows, calls scene and loads the scene.
-                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/userInterface_layout.fxml"));
-                                    Pane userInterface = loader.load(); // userInterface holds the loader information
-                                    Scene scene = new Scene(userInterface); // new scene holding userInterface
-                                    // Calling the controller class before we load it to pass information.
-
-                                    Stage windows = (Stage) ((Node)event.getSource()).getScene().getWindow(); // hides previous window;
-                                    windows.setScene(scene);
-                                    windows.show();
+                                    UserInterface userInterface = new UserInterface();
+                                    userInterface.startUI(null, event);
                                 } else {
                                     //TODO: Add something to show user they have entered wrong username or password.
                                     System.out.println("Wrong password");
@@ -139,19 +127,21 @@ public class LoginController implements Initializable {
         window.setScene(registrationScreen);
         window.show(); // changes to the new window
     }
-    /*
+
+    /**
      *  The methods below are used for the only purpose of controlling the customized created
      *  toolbar.
      *
      *  toolbarDragging methods helps us move the scene by dragging on the toolbar area.
      */
+
     public void toolbarDragging(MouseEvent mouseEvent) {
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         stage.setX(mouseEvent.getScreenX() - x);
         stage.setY(mouseEvent.getScreenY() - y);
     }
 
-    /*
+    /**
      * toolbarPressed gets us the x and y values to then be used on toolbarDragging
      * as we click on the toolbar location.
      */
@@ -161,7 +151,7 @@ public class LoginController implements Initializable {
         y = mouseEvent.getSceneY();
     }
 
-    /*
+    /**
      * toolbarMinimize is utilized to minimize the screen.
      */
 
@@ -170,7 +160,7 @@ public class LoginController implements Initializable {
         stage.setIconified(true);
     }
 
-    /*
+    /**
      * toolbarExit is utilized to exit the screen.
      */
 
