@@ -56,7 +56,6 @@ public class UserInterface {
                 }
         );
 
-        System.out.println("test");
         // Creating the new scene/window with the borderline we created programatically.
         if(borderPane.getScene() == null){
             Scene scene = new Scene(borderPane, 900, 700);

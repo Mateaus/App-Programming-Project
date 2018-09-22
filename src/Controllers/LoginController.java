@@ -128,6 +128,8 @@ public class LoginController implements Initializable {
         window.show(); // changes to the new window
     }
 
+    //TODO: Fix toolbarDrag to only be on the toolbar and not the entire layout.
+
     /**
      *  The methods below are used for the only purpose of controlling the customized created
      *  toolbar.
