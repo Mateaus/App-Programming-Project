@@ -31,13 +31,13 @@ public class UserInterface {
         event = (actionEvent == null ? keyEvent : actionEvent);
 
         // Loading our fxml files to be put into a borderpane.
-        URL menuUrl = getClass().getResource("/resources/layout/sidemenu_layout.fxml");
+        URL menuUrl = getClass().getResource("/resources/layout/UI_Layouts/sidemenu_layout.fxml");
         VBox leftMenu = FXMLLoader.load(menuUrl);
 
-        URL infoUrl = getClass().getResource("/resources/layout/welcome_layout.fxml");
+        URL infoUrl = getClass().getResource("/resources/layout/UI_Layouts/welcome_layout.fxml");
         Pane infoPane = FXMLLoader.load(infoUrl);
 
-        URL titleUrl = getClass().getResource("/resources/layout/titlebar_layout.fxml");
+        URL titleUrl = getClass().getResource("/resources/layout/UI_Layouts/titlebar_layout.fxml");
         GridPane titleBar = FXMLLoader.load(titleUrl);
 
         // Setting the fxml files that were loaded into our borderpane.

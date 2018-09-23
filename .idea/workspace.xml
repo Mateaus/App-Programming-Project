@@ -7,10 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controllers/UI_Controllers/MapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/UI_Controllers/WelcomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/layout/UI_Layouts/weatherapp_layout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Classes/MainLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Classes/MainLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Classes/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/Classes/UserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/RegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/UserInterfaceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/Controllers/WeatherAppController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/HttpRequests/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/login_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/map_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/registration_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/sidemenu_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/titlebar_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/userInterface_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Novus/resources/layout/userInterface_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/weatherapp_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/welcome_layout.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/MainLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MainLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginAndRegister_Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginAndRegister_Controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UI_Controllers/UserInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/OldUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/WeatherAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UI_Controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/ClearDay.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/ClearDay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/ClearNight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/ClearNight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Cloudy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Cloudy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Fog.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Fog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Hail.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Hail.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/PartlyCloudyDay.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/PartlyCloudyDay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/PartlyCloudyNight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/PartlyCloudyNight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Rain.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Rain.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Sleet.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Sleet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Snow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Snow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Thunderstorm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Thunderstorm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Tornado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Tornado.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/Wind.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/drawable/Weather_Icons/Wind.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/drawable/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/Login_Register_Layouts/login_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/map_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/UI_Layouts/map_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/Login_Register_Layouts/registration_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/sidemenu_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/UI_Layouts/sidemenu_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/titlebar_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/UI_Layouts/titlebar_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/weatherapp_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/layout/welcome_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/layout/UI_Layouts/welcome_layout.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,24 +119,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Classes/MainLogin.java">
+      <file leaf-file-name="UserInterfaceController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/UserInterfaceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-              <folding>
-                <element signature="e#769#770#0" expanded="true" />
-                <element signature="e#797#798#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
+            <state relative-caret-position="-1166">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,20 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInformation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Classes/UserInformation.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/LoginAndRegister_Controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Classes/UserInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="-1898">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,8 +150,8 @@
       <list>
         <option value="package-info" />
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -130,11 +159,12 @@
     <findStrings>
       <find>student_name</find>
       <find>test</find>
-      <find>System.out</find>
       <find>System.out.</find>
       <find>action</find>
       <find>System</find>
       <find>Tas</find>
+      <find>consume</find>
+      <find>System.out</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -161,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/Database/DatabaseStatus.java" />
         <option value="$PROJECT_DIR$/src/Database/SqliteConnection.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/RegisterRequest.java" />
-        <option value="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" />
         <option value="$PROJECT_DIR$/src/Classes/Context.java" />
         <option value="$PROJECT_DIR$/src/Classes/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/HttpRequests/ActivityRequest.java" />
@@ -173,19 +202,28 @@
         <option value="$PROJECT_DIR$/src/Controllers/RegistrationController.java" />
         <option value="$PROJECT_DIR$/src/resources/layout/registration_remake.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/registration_layout.fxml" />
-        <option value="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" />
         <option value="$PROJECT_DIR$/src/resources/layout/titlebar_layout.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/Info.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/Menu.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/login_layout.fxml" />
         <option value="$PROJECT_DIR$/src/resources/layout/Join.fxml" />
-        <option value="$PROJECT_DIR$/src/resources/layout/welcome_layout.fxml" />
-        <option value="$PROJECT_DIR$/src/resources/layout/map_layout.fxml" />
-        <option value="$PROJECT_DIR$/src/resources/layout/sidemenu_layout.fxml" />
-        <option value="$PROJECT_DIR$/src/Controllers/UIController.java" />
         <option value="$PROJECT_DIR$/src/Classes/MainLogin.java" />
         <option value="$PROJECT_DIR$/src/Classes/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/Controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/UIController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/sidemenu_layout.fxml" />
+        <option value="$PROJECT_DIR$/src/resources/layout/weatherapp_layout.fxml" />
+        <option value="$PROJECT_DIR$/src/HttpRequests/LoginRequest.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/OldUIController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/UserInterfaceController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/map_layout.fxml" />
+        <option value="$PROJECT_DIR$/src/Controllers/UIControllers/WeatherAppController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/UIControllers/WeatherController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/welcome_layout.fxml" />
+        <option value="$PROJECT_DIR$/src/Controllers/UIControllers/UserInterfaceController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/Login_RegisterControllers/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/Login_RegisterControllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/resources/layout/UI_Layouts/titlebar_layout.fxml" />
       </list>
     </option>
   </component>
@@ -291,25 +329,21 @@
               <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
               <item name="Novus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Novus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Novus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="HttpRequests" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
               <item name="Novus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Novus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Novus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,6 +375,9 @@
       <recent name="C:\Users\Mat\IdeaProjects\Novus\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mat\IdeaProjects\Novus\src\resources\drawable\Weather_Icons" />
+      <recent name="C:\Users\Mat\IdeaProjects\Novus\src\resources\layout\UI_Layouts" />
+      <recent name="C:\Users\Mat\IdeaProjects\Novus\src\resources\layout\Login_RegisterLayouts" />
       <recent name="C:\Users\Mat\IdeaProjects\Novus" />
       <recent name="C:\Users\Mat\IdeaProjects\Novus\src" />
     </key>
@@ -551,55 +588,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/net/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="150" column="19" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ResourceBundle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1859">
-          <caret line="376" column="22" selection-start-line="376" selection-start-column="22" selection-end-line="376" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.graphics/javafx/stage/Stage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.sql/java/sql/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Classes/BlackBoardApp.java" />
     <entry file="file://$PROJECT_DIR$/src/Classes/Registration.java" />
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/blackboardapp_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/drawable/blackboard_icon_o.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -653,21 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HttpRequests/LoginRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpRequests/RegisterRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -698,20 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/WeatherAppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3080">
-          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/layout/login_remake.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -727,14 +688,6 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/registration_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -761,55 +714,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/login_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="65" column="57" lean-forward="true" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/sidemenu_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/titlebar_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="195" selection-start-line="10" selection-start-column="195" selection-end-line="10" selection-end-column="195" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/welcome_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="128" lean-forward="true" selection-start-line="8" selection-start-column="128" selection-end-line="8" selection-end-column="128" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UIController.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.graphics/javafx/scene/Parent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="408">
+          <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/layout/map_layout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+    <entry file="file://$PROJECT_DIR$/src/Classes/UserInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classes/Context.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -824,34 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UserInterfaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.graphics/javafx/scene/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Classes/MainLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="85">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="e#769#770#0" expanded="true" />
             <element signature="e#797#798#0" expanded="true" />
@@ -859,27 +762,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/UserInformation.java">
+    <entry file="file://$PROJECT_DIR$/src/HttpRequests/StatusRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+          <folding>
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/UserInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/HttpRequests/LoginRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="374">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding>
+            <element signature="e#393#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/OldUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UIControllers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/MapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/WeatherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/WeatherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UI_Controllers/UserInterfaceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1166">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginAndRegister_Controllers/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
+        <state relative-caret-position="295">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/Login_Register_Layouts/registration_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/Login_Register_Layouts/login_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="57" lean-forward="true" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/UI_Layouts/welcome_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/blackboardapp_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/UI_Layouts/weatherapp_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="10" column="208" lean-forward="true" selection-start-line="10" selection-start-column="208" selection-end-line="10" selection-end-column="208" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/userInterface_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/UI_Layouts/titlebar_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="196" selection-start-line="10" selection-start-column="196" selection-end-line="10" selection-end-column="196" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/UI_Layouts/sidemenu_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/layout/UI_Layouts/map_layout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/drawable/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/drawable/login_background.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/LoginAndRegister_Controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1898">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

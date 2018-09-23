@@ -29,7 +29,7 @@ public class LoginRequest {
         JSONObject json = new JSONObject(jsonString);
         String response = json.get("success").toString();
         //String name = json.get("name").toString();
-        System.out.println(json);
+        //System.out.println(json);
         if(response.equals("true")) {
             return true;
         } else {

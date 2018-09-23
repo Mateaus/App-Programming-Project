@@ -14,7 +14,7 @@ public class MainLogin extends Application {
     public void start(Stage primaryStage) {
         try{
             // Load the first scene/screen, code can be modified but for now it's not necessary.
-            Parent root = FXMLLoader.load(getClass().getResource("/resources/layout/login_layout.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/resources/layout/Login_Register_Layouts/login_layout.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);
