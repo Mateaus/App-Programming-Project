@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="80.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UI_Controllers.UserInterfaceController">
+    <children>
+        <Button fx:id="displayOne" mnemonicParsing="false" onAction="#switchToWelcome" prefWidth="70.0" style="-fx-background-color: #2d3238; -fx-background-radius: 0;" text="Welcome!" textFill="WHITE">
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin></Button>
+        <Button fx:id="displayTwo" mnemonicParsing="false" onAction="#switchToMap" prefWidth="70.0" style="-fx-background-color: #2d3238; -fx-background-radius: 0;" text="The Map!" textFill="WHITE">
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin></Button>
+      <Button mnemonicParsing="false" onAction="#switchToWeather" prefWidth="70.0" style="-fx-background-color: #2d3238; -fx-background-radius: 0;" text="Weather" textFill="WHITE">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#logOut" prefWidth="70.0" style="-fx-background-color: #2d3238; -fx-background-radius: 0;" text="Logout" textFill="WHITE">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </Button>
+    </children>
+</VBox>
