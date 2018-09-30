@@ -37,12 +37,11 @@ public class UserInterface {
         URL infoUrl = getClass().getResource("/resources/layout/UI_Layouts/welcome_layout.fxml");
         Pane infoPane = FXMLLoader.load(infoUrl);
 
-        URL titleUrl = getClass().getResource("/resources/layout/UI_Layouts/titlebar_layout.fxml");
+        URL titleUrl = getClass().getResource("/resources/layout/TempBurner_Layouts/titlebar_layout.fxml");
         GridPane titleBar = FXMLLoader.load(titleUrl);
 
         // Setting the fxml files that were loaded into our borderpane.
         borderPane.setTop(titleBar);
-        borderPane.setLeft(leftMenu);
         borderPane.setCenter(infoPane);
         // Initializing title bar events.
         borderPane.setOnMouseDragged(
@@ -58,7 +57,7 @@ public class UserInterface {
 
         // Creating the new scene/window with the borderline we created programatically.
         if(borderPane.getScene() == null){
-            Scene scene = new Scene(borderPane, 900, 700);
+            Scene scene = new Scene(borderPane, 820, 700);
             // Loading the scene created into the stage and then we show it.
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
