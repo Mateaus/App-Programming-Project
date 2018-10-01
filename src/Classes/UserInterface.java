@@ -34,7 +34,7 @@ public class UserInterface {
         URL menuUrl = getClass().getResource("/resources/layout/TempBurner_Layouts/sidemenu_layout.fxml");
         VBox leftMenu = FXMLLoader.load(menuUrl);
 
-        URL infoUrl = getClass().getResource("/resources/layout/UI_Layouts/welcome_layout.fxml");
+        URL infoUrl = getClass().getResource("/resources/layout/UI_Layouts/create_layout.fxml");
         Pane infoPane = FXMLLoader.load(infoUrl);
 
         URL titleUrl = getClass().getResource("/resources/layout/UI_Layouts/titlebar_layout.fxml");

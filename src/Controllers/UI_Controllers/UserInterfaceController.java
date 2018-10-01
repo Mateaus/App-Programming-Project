@@ -24,14 +24,14 @@ public class UserInterfaceController {
      * switchToWelcome switches to the Welcome tab screen.
      */
 
-    public void switchToWelcome(ActionEvent event) {
+    public void switchToCreate(ActionEvent event) {
 
         try {
-            URL welcomeUrl = getClass().getResource("/resources/layout/UI_Layouts/welcome_layout.fxml");
-            Pane paneWelcome = FXMLLoader.load(welcomeUrl);
+            URL createUrl = getClass().getResource("/resources/layout/UI_Layouts/create_layout.fxml");
+            Pane paneCreate = FXMLLoader.load(createUrl);
 
             BorderPane border = UserInterface.getBorderPane();
-            border.setCenter(paneWelcome);
+            border.setCenter(paneCreate);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,27 +42,27 @@ public class UserInterfaceController {
      * switchToMap switches to the Map tab screen.
      */
 
-    public void switchToMap(ActionEvent event) {
+    public void switchToSearch(ActionEvent event) {
 
         try {
-            URL mapUrl = getClass().getResource("/resources/layout/UI_Layouts/map_layout.fxml");
-            Pane paneMap = FXMLLoader.load(mapUrl);
+            URL searchUrl = getClass().getResource("/resources/layout/UI_Layouts/search_layout.fxml");
+            Pane paneSearch = FXMLLoader.load(searchUrl);
 
             BorderPane border = UserInterface.getBorderPane();
-            border.setCenter(paneMap);
+            border.setCenter(paneSearch);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void switchToWeather(ActionEvent event) {
+    public void switchToHelp(ActionEvent event) {
         try {
-            URL weatherUrl = getClass().getResource("/resources/layout/UI_Layouts/weatherapp_layout.fxml");
-            Pane paneWeather = FXMLLoader.load(weatherUrl);
+            URL helpUrl = getClass().getResource("/resources/layout/UI_Layouts/help_layout.fxml");
+            Pane paneHelp = FXMLLoader.load(helpUrl);
 
             BorderPane border = UserInterface.getBorderPane();
-            border.setCenter(paneWeather);
+            border.setCenter(paneHelp);
 
         } catch (IOException e) {
             e.printStackTrace();

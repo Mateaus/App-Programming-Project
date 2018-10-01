@@ -1,4 +1,4 @@
-package Controllers.UI_Controllers;
+package Controllers.TempBurner_Controllers;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

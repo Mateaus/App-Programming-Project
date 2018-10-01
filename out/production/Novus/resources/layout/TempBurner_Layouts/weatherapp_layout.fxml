@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="670.0" prefWidth="820.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UI_Controllers.WeatherController">
+<Pane prefHeight="670.0" prefWidth="820.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TempBurner_Controllers.WeatherController">
   <children>
       <Label fx:id="Weather" alignment="CENTER" contentDisplay="CENTER" layoutX="334.0" layoutY="114.0" style="&#10;" text="99.99" textAlignment="CENTER" textFill="WHITE" wrapText="false">
           <font>

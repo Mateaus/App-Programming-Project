@@ -142,7 +142,7 @@ public class OldUIController implements Initializable {
     
     public void weatherApp(ActionEvent event) throws Exception
     {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/UI_Layouts/weatherapp_layout.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/layout/TempBurner_Layouts/weatherapp_layout.fxml"));
         Pane userInterface = loader.load(); // userInterface holds the loader information
         Scene scene = new Scene(userInterface); // new scene holding userInterface
 
