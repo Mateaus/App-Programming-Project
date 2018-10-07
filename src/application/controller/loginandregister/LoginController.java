@@ -39,35 +39,13 @@ public class LoginController implements Initializable {
         // Example: Button1 changes when it's pressed. It will read this function
         // to fetch the action.
     	Account account = new Account();
-    	account.loadAccounts();
+    	account.populateAccounts();
 
         loginBtn.setOnAction(
                 event -> {
                     email = emailTF.getText().toString();
                     password = passTF.getText().toString();
-                    try {
-                        LoginRequest loginRequest = new LoginRequest(email, password);
-                        HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
-                        HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-                        String responsejson = EntityUtils.toString(httpResponse.getEntity());
-                        EntityUtils.consume(httpResponse.getEntity());
-
-                        JSONObject jsonObject = new JSONObject(responsejson);
-                        String studentId = jsonObject.get("user_id").toString();
-                        String studentName = jsonObject.get("name").toString();
-                        Context.getInstance().currentUserInformation().setStudentId(studentId);
-                        Context.getInstance().currentUserInformation().setStudentName(studentName);
-
-                        if(loginRequest.checkRequest(responsejson).equals(true)){
-                            UserInterface userInterface = new UserInterface();
-                            userInterface.startUI(event, null);
-                        } else {
-                            //TODO: Add something to show user they have entered wrong username or password.
-                            System.out.println("Wrong password");
-                        }
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
+                    account.loginAccount(email, password, event);
                 }
         );
 
@@ -77,29 +55,7 @@ public class LoginController implements Initializable {
                         case ENTER:
                             email = emailTF.getText().toString();
                             password = passTF.getText().toString();
-                            try {
-                                LoginRequest loginRequest = new LoginRequest(email, password);
-                                HttpHandler httpHandler = new HttpHandler(loginRequest.getLoginRequestUrl(), loginRequest.getValuePairs());
-                                HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-                                String responsejson = EntityUtils.toString(httpResponse.getEntity());
-                                EntityUtils.consume(httpResponse.getEntity());
-
-                                JSONObject jsonObject = new JSONObject(responsejson);
-                                String studentId = jsonObject.get("user_id").toString();
-                                String studentName = jsonObject.get("name").toString();
-                                Context.getInstance().currentUserInformation().setStudentId(studentId);
-                                Context.getInstance().currentUserInformation().setStudentName(studentName);
-
-                                if(loginRequest.checkRequest(responsejson).equals(true)){
-                                    UserInterface userInterface = new UserInterface();
-                                    userInterface.startUI(null, event);
-                                } else {
-                                    //TODO: Add something to show user they have entered wrong username or password.
-                                    System.out.println("Wrong password");
-                                }
-                            } catch(Exception e) {
-
-                            }
+                            account.loginAccount(email, password, event);
                     }
                 }
         );

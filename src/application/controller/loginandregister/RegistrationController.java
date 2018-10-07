@@ -2,6 +2,7 @@ package application.controller.loginandregister;
 
 import HttpRequests.HttpHandler;
 import HttpRequests.RegisterRequest;
+import application.model.creation.Account;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,12 +39,10 @@ public class RegistrationController implements Initializable {
         try {
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty() && password.equals(passwordCheck)) {
-                RegisterRequest registerRequest = new RegisterRequest(name, username, password);
-                HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getValuePairs());
-                HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-                EntityUtils.consume(httpResponse.getEntity());
-                LoginController loginController = new LoginController();
-                loginController.changeToMainScreen(event);
+            	// Creates a new account.
+                Account account = new Account();
+                account.createAccount(name, username, passwordCheck, event);
+                
             } else if (nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)) {
             	String passException = "Passwords do not match";

@@ -26,10 +26,7 @@ public class UserInterface {
         return borderPane;
     }
 
-    public void startUI(ActionEvent actionEvent, KeyEvent keyEvent) throws IOException {
-        // if action event == null, event = keyEvent else actionEvent;
-        event = (actionEvent == null ? keyEvent : actionEvent);
-
+    public void startUI(Event event) throws IOException {
         // Loading our fxml files to be put into a borderpane.
         URL menuUrl = getClass().getResource("/TmpFolder/TempBurner_Layouts/sidemenu_layout.fxml");
         VBox leftMenu = FXMLLoader.load(menuUrl);
