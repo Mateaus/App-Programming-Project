@@ -8,6 +8,64 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/ActivityRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/HttpHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/RegisterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/HttpRequests/StatusRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/BlackBoardAppController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/OldUIController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/OldUIController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/OldUIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/WeatherController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/WeatherController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Controllers/WeatherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Layouts/blackboardapp_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Layouts/sidemenu_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Layouts/userInterface_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/TmpFolder/TempBurner_Layouts/weatherapp_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/MainLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/loginandregister/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/loginandregister/RegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/ui/CreateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/ui/HelpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/ui/SearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/controller/ui/UserInterfaceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/model/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/model/UserInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/model/UserInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/model/creation/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/application/model/creation/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/MainCampusMap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/ClearDay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/ClearNight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Cloudy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Fog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Hail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/PartlyCloudyDay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/PartlyCloudyNight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Rain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Sleet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Thunderstorm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Tornado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/Weather_Icons/Wind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/blackboard_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/blackboard_icon_o.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/login_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/map_pin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/utsa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/utsacolor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/drawable/utsaheadercolor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/loginandregister/login_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/loginandregister/registration_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/ui/create_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/ui/help_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/ui/search_layout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Novus/resources/layout/ui/titlebar_layout.fxml" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,8 +154,8 @@
       <file leaf-file-name="MainLogin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/MainLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="119" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="119" />
+            <state relative-caret-position="153">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -893,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/MainLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="119" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="119" />
+        <state relative-caret-position="153">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
         </state>
       </provider>
     </entry>
