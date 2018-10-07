@@ -10,7 +10,7 @@ import java.util.List;
 public class ActivityRequest {
 
     private static final String ACTIVITY_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Activity.php";
-    private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+    private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 
     public ActivityRequest(String studentId, String studentStatus) {
         nameValuePairs.add(new BasicNameValuePair("user_id", studentId));

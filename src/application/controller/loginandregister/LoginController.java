@@ -2,6 +2,7 @@ package application.controller.loginandregister;
 
 import TmpFolder.Context;
 import application.model.UserInterface;
+import application.model.creation.Account;
 import HttpRequests.HttpHandler;
 import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
@@ -37,6 +38,8 @@ public class LoginController implements Initializable {
         // Any actions done to buttons,etc will be passed through here first.
         // Example: Button1 changes when it's pressed. It will read this function
         // to fetch the action.
+    	Account account = new Account();
+    	account.loadAccounts();
 
         loginBtn.setOnAction(
                 event -> {

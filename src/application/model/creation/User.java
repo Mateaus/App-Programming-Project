@@ -5,13 +5,11 @@ public class User {
     private String Name;
     private String Username;
     private String Password;
-    private String RPassword;
 
-    public User(String name, String username, String password, String rpassword){
+    public User(String name, String username, String password){
         this.Name = name;
         this.Username = username;
         this.Password = password;
-        this.RPassword = rpassword;
     }
 
     public String getName() {
@@ -36,13 +34,5 @@ public class User {
 
     public void setPassword(String password) {
         Password = password;
-    }
-
-    public String getRPassword() {
-        return RPassword;
-    }
-
-    public void setRPassword(String RPassword) {
-        this.RPassword = RPassword;
     }
 }
