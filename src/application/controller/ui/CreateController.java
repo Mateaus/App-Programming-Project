@@ -34,6 +34,8 @@ public class CreateController implements Initializable {
 	
 	private double x, y;
 	private boolean isLocationSet = false;
+	private Image pin;
+	private ImageView view;
 	
 	private String nameOfGroup, studySubject, sizeOfGroup, start, length;
 	private LocalDate studyDate;
@@ -104,14 +106,27 @@ public class CreateController implements Initializable {
 			x = event.getX();
 			y = event.getY();
 			
-			Image pin = new Image ("@../../resources/drawable/map_pin.png");
-			ImageView view = new ImageView( pin );
+			pin = new Image ("@../../resources/drawable/map_pin.png");
+			view = new ImageView( pin );
 			view.setX(x - 10);
 			view.setY(y - 30);
 			view.setFitHeight(30.0);
 			view.setFitWidth(20.0);
 			imagePane.getChildren().add(view);
 			isLocationSet = true;
+		} else {
+			imagePane.getChildren().remove(view);
+			
+			x = event.getX();
+			y = event.getY();
+			
+			pin = new Image ("@../../resources/drawable/map_pin.png");
+			view = new ImageView( pin );
+			view.setX(x - 10);
+			view.setY(y - 30);
+			view.setFitHeight(30.0);
+			view.setFitWidth(20.0);
+			imagePane.getChildren().add(view);
 		}
 	}
 }
