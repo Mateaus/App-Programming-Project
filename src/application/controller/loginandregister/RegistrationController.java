@@ -41,10 +41,11 @@ public class RegistrationController implements Initializable {
                     && passTF != null && !password.isEmpty() && password.equals(passwordCheck)) {
             	// Creates a new account.
                 Account account = new Account();
-                account.createAccount(name, username, passwordCheck, event);
+                account.createAccount(name, username, password, event);
                 
             } else if (nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)) {
+            	// TODO: Need to include in layout.
             	String passException = "Passwords do not match";
             	errorMessage.setText(passException);
             } else {
