@@ -35,13 +35,13 @@ public class OldUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // We get the name from our global class which we stored from the previous scene.
-        studentLB.setText(Context.getInstance().currentUserInformation().getStudentName());
+        //studentLB.setText(Context.getInstance().currentUserInformation().getStudentName());
         try {
             /*
              * Request to the database to change anyone who logged in to be set as "online" status in the
              * database server.
              */
-            String studentId = Context.getInstance().currentUserInformation().getStudentId();
+            //String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "online");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
             HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
@@ -112,7 +112,7 @@ public class OldUIController implements Initializable {
                 event -> {
                     try {
                         this.isRunning = false;
-                        String studentId = Context.getInstance().currentUserInformation().getStudentId();
+                        //String studentId = Context.getInstance().currentUserInformation().getStudentId();
                         ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
                         HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
                         httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());

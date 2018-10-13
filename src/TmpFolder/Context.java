@@ -1,10 +1,10 @@
 package TmpFolder;
 
-import application.model.UserInformation;
+
 
 public class Context {
 
-    private final static Context instance = new Context();
+   /* private final static Context instance = new Context();
 
     public static Context getInstance() {
         return instance;
@@ -14,5 +14,5 @@ public class Context {
 
     public UserInformation currentUserInformation() {
         return userInformation;
-    }
+    }*/
 }

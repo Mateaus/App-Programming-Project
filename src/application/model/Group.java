@@ -3,9 +3,11 @@ package application.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import application.model.account.Account;
+
 public class Group {
-	private UserInformation groupOwner;
-	private ArrayList<UserInformation> members = new ArrayList<UserInformation>();
+	private String groupOwner;
+	private ArrayList<Account> members = new ArrayList<Account>();
 	private String nameOfGroup;
 	private String studySubject;
 	private String sizeOfGroup;
@@ -14,7 +16,7 @@ public class Group {
 	private LocalDate studyDate;
 	private double x, y;
 	
-	public Group(UserInformation username, String nameOfGroup, String studySubject, String sizeOfGroup, String start, String length, LocalDate studyDate, double x, double y) {
+	public Group(String username, String nameOfGroup, String studySubject, String sizeOfGroup, String start, String length, LocalDate studyDate, double x, double y) {
 		this.groupOwner = username;
 		this.nameOfGroup = nameOfGroup;
 		this.studySubject = studySubject;
@@ -26,7 +28,7 @@ public class Group {
 		this.y = y;
 	}
 	
-	public UserInformation getGroupOwner() {
+	public String getGroupOwner() {
 		return this.groupOwner;
 	}
 	
@@ -62,7 +64,7 @@ public class Group {
 		return this.y;
 	}
 	
-	public void setGroupOwner(UserInformation ownerUsername) {
+	public void setGroupOwner(String ownerUsername) {
 		this.groupOwner = ownerUsername;
 	}
 	
@@ -98,7 +100,7 @@ public class Group {
 		this.y = yLocation;
 	}
 	
-	public void addMember(UserInformation user) {
+	public void addMember(Account user) {
 		members.add(user);
 	}
 	

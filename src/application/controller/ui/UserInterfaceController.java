@@ -77,11 +77,11 @@ public class UserInterfaceController {
 
     public void logOut(ActionEvent event) {
         try {
-            String studentId = Context.getInstance().currentUserInformation().getStudentId();
+            /*String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
             HttpResponse httpResponse =  httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-            EntityUtils.consume(httpResponse.getEntity());
+            EntityUtils.consume(httpResponse.getEntity());*/
 
 
             MainLoginController loginController = new MainLoginController();
@@ -106,18 +106,17 @@ public class UserInterfaceController {
 
     public void toolbarExit(MouseEvent mouseEvent) {
         try {
-            String studentId = Context.getInstance().currentUserInformation().getStudentId();
+            /*String studentId = Context.getInstance().currentUserInformation().getStudentId();
             ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
             HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
             HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-            EntityUtils.consume(httpResponse.getEntity());
+            EntityUtils.consume(httpResponse.getEntity());*/
+        	Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.close();
     }
 
 }
