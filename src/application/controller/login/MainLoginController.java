@@ -1,10 +1,7 @@
 package application.controller.login;
 
-import TmpFolder.Context;
 import application.model.UserInterface;
 import application.model.account.Account;
-import HttpRequests.HttpHandler;
-import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.apache.http.HttpResponse;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,8 +39,8 @@ public class MainLoginController implements Initializable {
                     String username = emailTF.getText().toString();
                     String password = passTF.getText().toString();
                     Boolean confirmation = account.loginAccount(username, password);
-                    System.out.println(account.getUser().get(0).getUsername());
-                    System.out.println(account.getUser().get(0).getId());
+                    System.out.println(account.getUser().getUsername());
+                    System.out.println(account.getUser().getId());
                     if(confirmation.equals(true)) {
                     	UserInterface userInterface = new UserInterface();
                     	try {

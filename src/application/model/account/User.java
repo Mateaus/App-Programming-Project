@@ -18,6 +18,10 @@ public class User {
     	this.Username = username;
     }
     
+    public User() {
+    	
+    }
+    
     public String getId() {
     	return Id;
     }
