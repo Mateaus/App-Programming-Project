@@ -41,16 +41,17 @@ public class UserInterface {
         borderPane.setTop(titleBar);
         borderPane.setCenter(infoPane);
         // Initializing title bar events.
-        borderPane.setOnMouseDragged(
-                eventDrag -> {
-                    toolbarDragging(eventDrag);
-                }
-        );
-        borderPane.setOnMousePressed(
-                eventPres -> {
-                    toolbarPressed(eventPres);
-                }
-        );
+        titleBar.setOnMouseDragged(
+        		eventDrag -> {
+        			toolbarDragging(eventDrag);
+        		}
+        ); 
+        
+        titleBar.setOnMousePressed(
+        		eventPres -> {
+        			toolbarPressed(eventPres);
+        		}
+        );  
 
         // Creating the new scene/window with the borderline we created programatically.
         if(borderPane.getScene() == null){

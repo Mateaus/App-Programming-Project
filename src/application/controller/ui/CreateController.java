@@ -87,8 +87,8 @@ public class CreateController implements Initializable {
 		
 		/**
 		 *  This is how to fetch the current logged in user id and username.
-		 *  Since I'm using the arraylist and we are only passing 1 account.
-		 *  the 'get(0)' will always be the first one which is always index 0.
+		 *  This account is being passed through UserInterface class into the
+		 *  static controller UserInterfaceController.
 		 */
 		String userID = UserInterface.getAccount().getUser().getId();
 		String userName = UserInterface.getAccount().getUser().getUsername();

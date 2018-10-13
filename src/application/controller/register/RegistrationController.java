@@ -40,7 +40,7 @@ public class RegistrationController implements Initializable {
         String passwordCheck = passCheckTF.getText().toString();
         try {
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
-                    && passTF != null && !password.isEmpty() && password.equals(passwordCheck)) {
+                    && passTF != null && !password.isEmpty() && password.equals(passwordCheck) && !passwordCheck.isEmpty()) {
             	// Creates a new account.
                 Account account = new Account();
                 account.createAccount(name, username, password);
@@ -48,7 +48,7 @@ public class RegistrationController implements Initializable {
         		loginController.changeToMainScreen(event);
                 
             } else if (nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
-                    && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)) {
+                    && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)  && !passwordCheck.isEmpty()) {
             	// TODO: Need to include in layout.
             	String passException = "Passwords do not match";
             	errorMessage.setText(passException);

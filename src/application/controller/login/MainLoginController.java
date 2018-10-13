@@ -73,6 +73,8 @@ public class MainLoginController implements Initializable {
                             } else {
                             	System.out.println("Wrong password");
                             }
+                        default:
+                        	break;	
                     }
                 }
         );
@@ -100,8 +102,6 @@ public class MainLoginController implements Initializable {
         window.setScene(registrationScreen);
         window.show(); // changes to the new window
     }
-
-    //TODO: Fix toolbarDrag to only be on the toolbar and not the entire layout.
 
     /**
      *  The methods below are used for the only purpose of controlling the customized created

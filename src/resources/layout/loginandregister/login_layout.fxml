@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#toolbarDragging" onMousePressed="#toolbarPressed" prefHeight="370.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.login.MainLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.login.MainLoginController">
     <center>
         <Pane fx:id="logLayout" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #23272a;" xmlns:a="http://javafx.com/javafx/8.0.121" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
             <children>
@@ -57,7 +57,7 @@
 
     </center>
    <top>
-      <GridPane style="-fx-background-color: #2d3238;" BorderPane.alignment="CENTER">
+      <GridPane onMouseDragged="#toolbarDragging" onMousePressed="#toolbarPressed" style="-fx-background-color: #2d3238;" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
