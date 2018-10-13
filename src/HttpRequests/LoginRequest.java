@@ -24,16 +24,4 @@ public class LoginRequest {
     public String getLoginRequestUrl() {
         return LOGIN_REQUEST_URL;
     }
-
-    public Boolean checkRequest(String jsonString) throws Exception{
-        JSONObject json = new JSONObject(jsonString);
-        String response = json.get("success").toString();
-        //String name = json.get("name").toString();
-        //System.out.println(json);
-        if(response.equals("true")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

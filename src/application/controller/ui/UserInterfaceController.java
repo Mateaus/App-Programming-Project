@@ -1,8 +1,8 @@
 package application.controller.ui;
 
 import TmpFolder.Context;
+import application.controller.login.MainLoginController;
 import application.model.UserInterface;
-import application.controller.loginandregister.LoginController;
 import HttpRequests.ActivityRequest;
 import HttpRequests.HttpHandler;
 import javafx.event.ActionEvent;
@@ -17,9 +17,11 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 public class UserInterfaceController {
-
+	
+	
     /**
      * switchToWelcome switches to the Welcome tab screen.
      */
@@ -82,7 +84,7 @@ public class UserInterfaceController {
             EntityUtils.consume(httpResponse.getEntity());
 
 
-            LoginController loginController = new LoginController();
+            MainLoginController loginController = new MainLoginController();
             loginController.changeToMainScreen(event);
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,4 +119,5 @@ public class UserInterfaceController {
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         stage.close();
     }
+
 }

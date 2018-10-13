@@ -1,7 +1,8 @@
-package application.model.creation;
+package application.model.account;
 
 public class User {
 
+	private String Id;
     private String Name;
     private String Username;
     private String Password;
@@ -10,6 +11,19 @@ public class User {
         this.Name = name;
         this.Username = username;
         this.Password = password;
+    }
+    
+    public User(String id, String username) {
+    	this.Id = id;
+    	this.Username = username;
+    }
+    
+    public String getId() {
+    	return Id;
+    }
+    
+    public void setId(String id) {
+    	Id = id;
     }
 
     public String getName() {

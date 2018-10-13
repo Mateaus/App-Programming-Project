@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import application.model.UserInterface;
 
 public class CreateController implements Initializable {
 	
@@ -83,6 +84,15 @@ public class CreateController implements Initializable {
 		} else {
 			messageLabel.setText("Invalid group size and study subject");
 		}
+		
+		/**
+		 *  This is how to fetch the current logged in user id and username.
+		 *  Since I'm using the arraylist and we are only passing 1 account.
+		 *  the 'get(0)' will always be the first one which is always index 0.
+		 */
+		String userID = UserInterface.getAccount().getUser().get(0).getId();
+		String userName = UserInterface.getAccount().getUser().get(0).getUsername();
+		System.out.println("User Id: " + userID +", Username: " + userName);
 		
 		if (isLocationSet && isValidSubject && isValidSize) {
 			// TODO: replace "username" with the current user's UserInformation

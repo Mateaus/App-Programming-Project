@@ -1,8 +1,10 @@
-package application.controller.loginandregister;
+package application.controller.register;
 
 import HttpRequests.HttpHandler;
 import HttpRequests.RegisterRequest;
-import application.model.creation.Account;
+import application.controller.login.MainLoginController;
+import application.model.account.Account;
+import application.model.account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,7 +43,9 @@ public class RegistrationController implements Initializable {
                     && passTF != null && !password.isEmpty() && password.equals(passwordCheck)) {
             	// Creates a new account.
                 Account account = new Account();
-                account.createAccount(name, username, password, event);
+                account.createAccount(name, username, password);
+            	MainLoginController loginController = new MainLoginController();
+        		loginController.changeToMainScreen(event);
                 
             } else if (nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)) {
@@ -60,7 +64,7 @@ public class RegistrationController implements Initializable {
     }
 
     public void changeToMainScreen(ActionEvent event) throws Exception {
-        LoginController loginController = new LoginController();
+        MainLoginController loginController = new MainLoginController();
         loginController.changeToMainScreen(event);
     }
 

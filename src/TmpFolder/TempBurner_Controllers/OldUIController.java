@@ -1,7 +1,7 @@
 package TmpFolder.TempBurner_Controllers;
 
 import TmpFolder.Context;
-import application.controller.loginandregister.LoginController;
+import application.controller.login.MainLoginController;
 import HttpRequests.ActivityRequest;
 import HttpRequests.HttpHandler;
 import HttpRequests.StatusRequest;
@@ -117,7 +117,7 @@ public class OldUIController implements Initializable {
                         HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
                         httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
 
-                        LoginController loginController = new LoginController();
+                        MainLoginController loginController = new MainLoginController();
                         loginController.changeToMainScreen(event);
                     } catch (Exception e) {
                         e.printStackTrace();

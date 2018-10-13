@@ -15,22 +15,22 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+import application.model.account.Account;
+
 
 public class UserInterface {
 
     private static BorderPane borderPane = new BorderPane();
     private static double x, y;
     private Event event;
+    private static Account account;
 
     public static BorderPane getBorderPane() {
         return borderPane;
     }
 
-    public void startUI(Event event) throws IOException {
+    public void startUI(Event event, Account account) throws IOException {
         // Loading our fxml files to be put into a borderpane.
-        URL menuUrl = getClass().getResource("/TmpFolder/TempBurner_Layouts/sidemenu_layout.fxml");
-        VBox leftMenu = FXMLLoader.load(menuUrl);
-
         URL infoUrl = getClass().getResource("/resources/layout/ui/create_layout.fxml");
         Pane infoPane = FXMLLoader.load(infoUrl);
 
@@ -57,6 +57,7 @@ public class UserInterface {
             Scene scene = new Scene(borderPane, 820, 700);
             // Loading the scene created into the stage and then we show it.
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            setAccount(account);
             window.setScene(scene);
             window.show();
         } else {
@@ -65,6 +66,14 @@ public class UserInterface {
             window.show();
         }
 
+    }
+    
+    public static Account getAccount() {
+    	return account;
+    }
+    
+    public static void setAccount(Account cccount) {
+    	account = cccount;
     }
 
     /*

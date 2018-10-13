@@ -1,8 +1,8 @@
-package application.controller.loginandregister;
+package application.controller.login;
 
 import TmpFolder.Context;
 import application.model.UserInterface;
-import application.model.creation.Account;
+import application.model.account.Account;
 import HttpRequests.HttpHandler;
 import HttpRequests.LoginRequest;
 import javafx.event.ActionEvent;
@@ -20,17 +20,18 @@ import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class LoginController implements Initializable {
+public class MainLoginController implements Initializable {
 
     @FXML private Button loginBtn;
     @FXML private Pane logLayout;
     @FXML private TextField emailTF, passTF;
+    private Account account = new Account();
 
-    private String email, password;
     private double x, y;
 
     @Override
@@ -38,14 +39,25 @@ public class LoginController implements Initializable {
         // Any actions done to buttons,etc will be passed through here first.
         // Example: Button1 changes when it's pressed. It will read this function
         // to fetch the action.
-    	Account account = new Account();
-    	account.populateAccounts();
-
+    
         loginBtn.setOnAction(
                 event -> {
-                    email = emailTF.getText().toString();
-                    password = passTF.getText().toString();
-                    account.loginAccount(email, password, event);
+                    String username = emailTF.getText().toString();
+                    String password = passTF.getText().toString();
+                    Boolean confirmation = account.loginAccount(username, password);
+                    System.out.println(account.getUser().get(0).getUsername());
+                    System.out.println(account.getUser().get(0).getId());
+                    if(confirmation.equals(true)) {
+                    	UserInterface userInterface = new UserInterface();
+                    	try {
+							userInterface.startUI(event, account);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							System.out.println(e);
+						}
+                    } else {
+                    	System.out.println("Wrong password");
+                    }
                 }
         );
 
@@ -53,9 +65,20 @@ public class LoginController implements Initializable {
                  event -> {
                     switch (event.getCode()) {
                         case ENTER:
-                            email = emailTF.getText().toString();
-                            password = passTF.getText().toString();
-                            account.loginAccount(email, password, event);
+                            String email = emailTF.getText().toString();
+                            String password = passTF.getText().toString();
+                            Boolean confirmation = account.loginAccount(email, password);
+                            if(confirmation.equals(true)) {
+                            	UserInterface userInterface = new UserInterface();
+                            	try {
+									userInterface.startUI(event, account);
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									System.out.println(e);
+								}
+                            } else {
+                            	System.out.println("Wrong password");
+                            }
                     }
                 }
         );
