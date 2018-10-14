@@ -9,6 +9,7 @@ public abstract class TitleBar {
 	/*
 	 * x and y values utilized to get our x and y axis location of our titlebar.
 	 */
+	
 	private static double x = 0;
 	private static double y = 0;
 	
@@ -35,7 +36,7 @@ public abstract class TitleBar {
         y = mouseEvent.getSceneY();
 	}
 	
-	/**
+	/*
      * toolbarMinimize is utilized to minimize the screen.
      */
 
@@ -44,7 +45,7 @@ public abstract class TitleBar {
         stage.setIconified(true);
     }
     
-    /**
+    /*
      * toolbarExit is utilized to exit the screen.
      */
 

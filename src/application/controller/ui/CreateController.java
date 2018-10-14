@@ -86,13 +86,15 @@ public class CreateController implements Initializable {
 		}
 		
 		/**
-		 *  This is how to fetch the current logged in user id and username.
+		 *  This is how to fetch the current logged in user id, username and name.
 		 *  This account is being passed through UserInterface class into the
 		 *  static controller UserInterfaceController.
 		 */
-		String userID = UserInterface.getAccount().getUser().getId();
-		String userName = UserInterface.getAccount().getUser().getUsername();
-		System.out.println("User Id: " + userID +", Username: " + userName);
+		String id = UserInterface.getUserLoginResponse().getId();
+		String name = UserInterface.getUserLoginResponse().getUsername();
+		String userName = UserInterface.getUserLoginResponse().getName();
+		
+		System.out.println("User Id: " + id +", Username: " + name + ", Name: "+ userName);
 		
 		if (isLocationSet && isValidSubject && isValidSize) {
 			// TODO: replace "username" with the current user's UserInformation

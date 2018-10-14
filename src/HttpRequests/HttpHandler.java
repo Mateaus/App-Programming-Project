@@ -19,17 +19,26 @@ public class HttpHandler {
         this.nameValuePairs = nameValuePairs;
     }
 
-    public HttpPost HttpPostRequest() throws Exception{
-        HttpPost httpPost = new HttpPost(this.UrlRequest);
-        httpPost.setEntity(new UrlEncodedFormEntity(this.nameValuePairs));
+    public HttpPost HttpPostRequest() {
+    	try {
+    		HttpPost httpPost = new HttpPost(this.UrlRequest);
+    		httpPost.setEntity(new UrlEncodedFormEntity(this.nameValuePairs));
+    		return httpPost;
+    	} catch (Exception e ) {
+    		System.out.println(e);
+    		return null;
+    	}
 
-        return httpPost;
     }
 
-    public HttpResponse HttpResponseRequest(HttpPost httpPost) throws Exception {
-        HttpClient httpClient = HttpClientBuilder.create().build();
-        HttpResponse httpResponse = httpClient.execute(httpPost);
-
-        return httpResponse;
+    public HttpResponse HttpResponseRequest(HttpPost httpPost) {
+    	try {
+    		HttpClient httpClient = HttpClientBuilder.create().build();
+    		HttpResponse httpResponse = httpClient.execute(httpPost);
+    		return httpResponse;
+    	} catch (Exception e ) {
+    		System.out.println(e);
+    		return null;
+    	}
     }
 }

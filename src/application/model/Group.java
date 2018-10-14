@@ -3,11 +3,11 @@ package application.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import application.model.account.Account;
+import application.model.database.UserLoginResponse;
 
 public class Group {
 	private String groupOwner;
-	private ArrayList<Account> members = new ArrayList<Account>();
+	private ArrayList<UserLoginResponse> members = new ArrayList<UserLoginResponse>();
 	private String nameOfGroup;
 	private String studySubject;
 	private String sizeOfGroup;
@@ -100,8 +100,8 @@ public class Group {
 		this.y = yLocation;
 	}
 	
-	public void addMember(Account user) {
-		members.add(user);
+	public void addMember(UserLoginResponse userLoginResponse) {
+		members.add(userLoginResponse);
 	}
 	
 	public String toString() {

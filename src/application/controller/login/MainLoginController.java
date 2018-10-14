@@ -2,7 +2,9 @@ package application.controller.login;
 
 import application.model.TitleBar;
 import application.model.UserInterface;
-import application.model.account.Account;
+import application.model.database.User;
+import application.model.database.UserDAO;
+import application.model.database.UserLoginResponse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +22,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class MainLoginController extends TitleBar implements Initializable {
+public class MainLoginController implements Initializable {
 
     @FXML 
     private Button loginBtn, minBtn, exitBtn;
@@ -31,7 +33,7 @@ public class MainLoginController extends TitleBar implements Initializable {
     @FXML 
     private GridPane titleBar;
     
-    private Account account = new Account();
+    private UserDAO userDAO = new UserDAO();
 
 
     @Override
@@ -39,18 +41,22 @@ public class MainLoginController extends TitleBar implements Initializable {
         // Any actions done to buttons,etc will be passed through here first.
         // Example: Button1 changes when it's pressed. It will read this function
         // to fetch the action.
-    
+    	
         loginBtn.setOnAction(
                 event -> {
                     String username = emailTF.getText().toString();
                     String password = passTF.getText().toString();
-                    Boolean confirmation = account.loginAccount(username, password);
-                    System.out.println(account.getUser().getUsername());
-                    System.out.println(account.getUser().getId());
-                    if(confirmation.equals(true)) {
-                    	UserInterface userInterface = new UserInterface();
+                    Boolean authentication = userDAO.authenticateUser(new User(username, password));
+              
+                    if(authentication.equals(true)) {
                     	try {
-							userInterface.startUI(event, account);
+                    		UserInterface userInterface = new UserInterface();
+                    		UserLoginResponse userLoginResponse = userDAO.getUser(username);
+                    		if (userLoginResponse != null) {
+                    			userInterface.startUI(event, userLoginResponse);
+                    		} else {
+                    			System.out.println("Username doesn't exist!");
+                    		}
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							System.out.println(e);
@@ -65,17 +71,17 @@ public class MainLoginController extends TitleBar implements Initializable {
                  event -> {
                     switch (event.getCode()) {
                         case ENTER:
-                            String email = emailTF.getText().toString();
+                        	String username = emailTF.getText().toString();
                             String password = passTF.getText().toString();
-                            Boolean confirmation = account.loginAccount(email, password);
-                            if(confirmation.equals(true)) {
+                            Boolean authentication = userDAO.authenticateUser(new User(username, password));
+                            if(authentication.equals(true)) {
                             	UserInterface userInterface = new UserInterface();
                             	try {
-									userInterface.startUI(event, account);
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									System.out.println(e);
-								}
+        							userInterface.startUI(event, userDAO.getUser(username));
+        						} catch (IOException e) {
+        							// TODO Auto-generated catch block
+        							System.out.println(e);
+        						}
                             } else {
                             	System.out.println("Wrong password");
                             }

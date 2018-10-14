@@ -12,19 +12,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-import application.model.account.Account;
+import application.model.database.User;
+import application.model.database.UserLoginResponse;
 
 
-public class UserInterface extends TitleBar{
+public class UserInterface {
 
     private static BorderPane borderPane = new BorderPane();
-    private static Account account;
+    private static UserLoginResponse userLoginResponse;
 
     public static BorderPane getBorderPane() {
         return borderPane;
     }
 
-    public void startUI(Event event, Account account) throws IOException {
+    public void startUI(Event event, UserLoginResponse userLoginResponse) throws IOException {
         // Loading our fxml files to be put into a borderpane.
         URL infoUrl = getClass().getResource("/resources/layout/ui/create_layout.fxml");
         Pane infoPane = FXMLLoader.load(infoUrl);
@@ -55,7 +56,7 @@ public class UserInterface extends TitleBar{
             Scene scene = new Scene(borderPane, 820, 700);
             // Loading the scene created into the stage and then we show it.
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            setAccount(account);
+            setUserLoginResponse(userLoginResponse);
             window.setScene(scene);
             window.show();
         } else {
@@ -66,11 +67,11 @@ public class UserInterface extends TitleBar{
 
     }
     
-    public static Account getAccount() {
-    	return account;
+    public static UserLoginResponse getUserLoginResponse() {
+    	return userLoginResponse;
     }
     
-    public static void setAccount(Account cccount) {
-    	account = cccount;
+    public static void setUserLoginResponse(UserLoginResponse user) {
+    	userLoginResponse = user;
     }
 }

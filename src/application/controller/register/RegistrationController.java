@@ -2,7 +2,8 @@ package application.controller.register;
 
 import application.controller.login.MainLoginController;
 import application.model.TitleBar;
-import application.model.account.Account;
+import application.model.database.User;
+import application.model.database.UserDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +15,7 @@ import javafx.scene.layout.GridPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RegistrationController extends TitleBar implements Initializable{
+public class RegistrationController implements Initializable{
 
     @FXML
     private TextField nameTF, usernameTF, passTF, passCheckTF;
@@ -27,6 +28,8 @@ public class RegistrationController extends TitleBar implements Initializable{
     
     @FXML
     private Button minBtn, exitBtn;
+    
+    private UserDAO userDAO = new UserDAO();
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -64,9 +67,9 @@ public class RegistrationController extends TitleBar implements Initializable{
         try {
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
                     && passTF != null && !password.isEmpty() && password.equals(passwordCheck) && !passwordCheck.isEmpty()) {
-            	// Creates a new account.
-                Account account = new Account();
-                account.createAccount(name, username, password);
+      
+            	userDAO.createUser(new User(name, username, password));
+            	
             	MainLoginController loginController = new MainLoginController();
         		loginController.changeToMainScreen(event);
                 

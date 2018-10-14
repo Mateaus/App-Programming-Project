@@ -1,25 +1,44 @@
 package application.controller.ui;
 
-import TmpFolder.Context;
 import application.controller.login.MainLoginController;
+import application.model.TitleBar;
 import application.model.UserInterface;
-import HttpRequests.ActivityRequest;
-import HttpRequests.HttpHandler;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.apache.http.HttpResponse;
-import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserInterfaceController {
+public class UserInterfaceController implements Initializable{
+	
+	@FXML
+	private Button minBtn, exitBtn;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		minBtn.setOnMouseClicked(
+    			eventMinClicked -> {
+    				TitleBar.toolbarMinimize(eventMinClicked);
+    			}
+    	);
+    	
+    	exitBtn.setOnMouseClicked(
+    			eventExitClicked -> {
+    				TitleBar.toolbarExit(eventExitClicked);
+    			}
+    	);
+		
+	}
 	
 	
     /**
@@ -77,13 +96,6 @@ public class UserInterfaceController {
 
     public void logOut(ActionEvent event) {
         try {
-            /*String studentId = Context.getInstance().currentUserInformation().getStudentId();
-            ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
-            HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
-            HttpResponse httpResponse =  httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-            EntityUtils.consume(httpResponse.getEntity());*/
-
-
             MainLoginController loginController = new MainLoginController();
             loginController.changeToMainScreen(event);
         } catch (Exception e) {
@@ -118,5 +130,6 @@ public class UserInterfaceController {
             e.printStackTrace();
         }
     }
+
 
 }

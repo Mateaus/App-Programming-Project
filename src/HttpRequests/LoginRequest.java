@@ -10,7 +10,7 @@ import java.util.List;
 public class LoginRequest {
 
     private static final String LOGIN_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Login.php";
-    private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+    private ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 
     public LoginRequest(String username, String password) throws Exception{
         nameValuePairs.add(new BasicNameValuePair("username", username));
