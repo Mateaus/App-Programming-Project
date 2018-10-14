@@ -12,7 +12,7 @@ public class Account {
     private User user;
 
     public Account() {
-        this.user = new User();
+    	this.user = new User();
     }
 
     public User getUser() {

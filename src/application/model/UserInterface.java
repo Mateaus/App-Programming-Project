@@ -1,13 +1,10 @@
 package application.model;
 
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -18,11 +15,9 @@ import java.net.URL;
 import application.model.account.Account;
 
 
-public class UserInterface {
+public class UserInterface extends TitleBar{
 
     private static BorderPane borderPane = new BorderPane();
-    private static double x, y;
-    private Event event;
     private static Account account;
 
     public static BorderPane getBorderPane() {
@@ -43,13 +38,15 @@ public class UserInterface {
         // Initializing title bar events.
         titleBar.setOnMouseDragged(
         		eventDrag -> {
-        			toolbarDragging(eventDrag);
+        			TitleBar.toolbarDragging(eventDrag);
+        			//toolbarDragging(eventDrag);
         		}
         ); 
         
         titleBar.setOnMousePressed(
         		eventPres -> {
-        			toolbarPressed(eventPres);
+        			TitleBar.toolbarPressed(eventPres);
+        			//toolbarPressed(eventPres);
         		}
         );  
 
@@ -75,27 +72,5 @@ public class UserInterface {
     
     public static void setAccount(Account cccount) {
     	account = cccount;
-    }
-
-    /*
-     *  The methods below are used for the only purpose of controlling the customized created
-     *  toolbar.
-     *
-     *  toolbarDragging methods helps us move the scene by dragging on the toolbar area.
-     */
-    public static void toolbarDragging(MouseEvent mouseEvent) {
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.setX(mouseEvent.getScreenX() - x);
-        stage.setY(mouseEvent.getScreenY() - y);
-    }
-
-    /*
-     * toolbarPressed gets us the x and y values to then be used on toolbarDragging
-     * as we click on the toolbar location.
-     */
-
-    public static void toolbarPressed(MouseEvent mouseEvent) {
-        x = mouseEvent.getSceneX();
-        y = mouseEvent.getSceneY();
     }
 }

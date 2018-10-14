@@ -1,35 +1,58 @@
 package application.controller.register;
 
-import HttpRequests.HttpHandler;
-import HttpRequests.RegisterRequest;
 import application.controller.login.MainLoginController;
+import application.model.TitleBar;
 import application.model.account.Account;
-import application.model.account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import org.apache.http.HttpResponse;
-import org.apache.http.util.EntityUtils;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RegistrationController implements Initializable {
+public class RegistrationController extends TitleBar implements Initializable{
 
     @FXML
     private TextField nameTF, usernameTF, passTF, passCheckTF;
     
     @FXML
     private Label errorMessage;
+    
+    @FXML
+    private GridPane titleBar;
+    
+    @FXML
+    private Button minBtn, exitBtn;
 
-    private double x, y;
 
     public void initialize(URL location, ResourceBundle resources) {
+    	
+    	titleBar.setOnMouseDragged(
+    			eventDrag -> {
+    				TitleBar.toolbarDragging(eventDrag);
+    			}
+    	);
+    	titleBar.setOnMousePressed(
+    			eventPres -> {
+    				TitleBar.toolbarPressed(eventPres);
+    			}
+    	);
+    	
+    	minBtn.setOnMouseClicked(
+    			eventMinClicked -> {
+    				TitleBar.toolbarMinimize(eventMinClicked);
+    			}
+    	);
+    	
+    	exitBtn.setOnMouseClicked(
+    			eventExitClicked -> {
+    				TitleBar.toolbarExit(eventExitClicked);
+    			}
+    	);
     	
     }
 
@@ -68,43 +91,4 @@ public class RegistrationController implements Initializable {
         loginController.changeToMainScreen(event);
     }
 
-    /**
-     *  The methods below are used for the only purpose of controlling the customized created
-     *  toolbar.
-     *
-     *  toolbarDragging methods helps us move the scene by dragging on the toolbar area.
-     */
-    public void toolbarDragging(MouseEvent mouseEvent) {
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.setX(mouseEvent.getScreenX() - x);
-        stage.setY(mouseEvent.getScreenY() - y);
-    }
-
-    /**
-     * toolbarPressed gets us the x and y values to then be used on toolbarDragging
-     * as we click on the toolbar location.
-     */
-
-    public void toolbarPressed(MouseEvent mouseEvent) {
-        x = mouseEvent.getSceneX();
-        y = mouseEvent.getSceneY();
-    }
-
-    /**
-     * toolbarMinimize is utilized to minimize the screen.
-     */
-
-    public void toolbarMinimize(MouseEvent mouseEvent) {
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.setIconified(true);
-    }
-
-    /**
-     * toolbarExit is utilized to exit the screen.
-     */
-
-    public void toolbarExit(MouseEvent mouseEvent) {
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.close();
-    }
 }

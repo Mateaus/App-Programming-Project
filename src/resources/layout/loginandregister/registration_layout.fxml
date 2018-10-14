@@ -36,7 +36,7 @@
       </Pane>
    </center>
    <top>
-      <GridPane onMouseDragged="#toolbarDragging" onMousePressed="#toolbarPressed" style="-fx-background-color: #2d3238;" BorderPane.alignment="CENTER">
+      <GridPane fx:id="titleBar" style="-fx-background-color: #2d3238;" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -45,12 +45,12 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#toolbarExit" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-family: Candara;" styleClass="toolbarHover" stylesheets="@../../css/style.css" text="X" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="exitBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-family: Candara;" styleClass="toolbarHover" stylesheets="@../../css/style.css" text="X" textFill="WHITE" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="minBtn" mnemonicParsing="false" onMouseClicked="#toolbarMinimize" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-size: 9; -fx-font-family: Candara;" styleClass="toolbarHover" stylesheets="@../../css/style.css" text="_" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="minBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-size: 9; -fx-font-family: Candara;" styleClass="toolbarHover" stylesheets="@../../css/style.css" text="_" textFill="WHITE" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="25.0" top="5.0" />
                </GridPane.margin></Button>
