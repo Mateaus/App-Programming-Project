@@ -89,6 +89,19 @@ public class UserInterfaceController implements Initializable{
             e.printStackTrace();
         }
     }
+    
+    public void switchToSettings(ActionEvent event) {
+    	try {
+    		URL settingsUrl = getClass().getResource("/resources/layout/ui/settings_layout.fxml");
+    		Pane paneSettings = FXMLLoader.load(settingsUrl);
+    		
+    		BorderPane border = UserInterface.getBorderPane();
+    		border.setCenter(paneSettings);
+    		
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    }
 
     /**
      * logOut sets user back to status "offline" and we return back to the loginScreen.
@@ -102,34 +115,4 @@ public class UserInterfaceController implements Initializable{
             e.printStackTrace();
         }
     }
-
-    /**
-     * toolbarMinimize is utilized to minimize the screen.
-     */
-
-    public void toolbarMinimize(MouseEvent mouseEvent) {
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        stage.setIconified(true);
-    }
-
-    /**
-     * toolbarExit is utilized to exit the screen.
-     */
-
-    public void toolbarExit(MouseEvent mouseEvent) {
-        try {
-            /*String studentId = Context.getInstance().currentUserInformation().getStudentId();
-            ActivityRequest activityRequest = new ActivityRequest(studentId, "offline");
-            HttpHandler httpHandler = new HttpHandler(activityRequest.getActivityRequestUrl(), activityRequest.getValuePairs());
-            HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
-            EntityUtils.consume(httpResponse.getEntity());*/
-        	Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
 }

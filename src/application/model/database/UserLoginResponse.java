@@ -5,6 +5,11 @@ public class UserLoginResponse {
     private String name;
     private String username;
     
+    public UserLoginResponse(String name, String username) {
+    	this.name = name;
+    	this.username = username;
+    }
+    
     public UserLoginResponse(String id, String name, String username) {
     	this.id = id;
     	this.name = name;

@@ -61,6 +61,7 @@ public class UserInterface {
             window.show();
         } else {
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            setUserLoginResponse(userLoginResponse);
             window.setScene(borderPane.getScene());
             window.show();
         }

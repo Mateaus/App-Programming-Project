@@ -51,7 +51,7 @@ public class MainLoginController implements Initializable {
                     if(authentication.equals(true)) {
                     	try {
                     		UserInterface userInterface = new UserInterface();
-                    		UserLoginResponse userLoginResponse = userDAO.getUser(username);
+                    		UserLoginResponse userLoginResponse = userDAO.findUser(username);
                     		if (userLoginResponse != null) {
                     			userInterface.startUI(event, userLoginResponse);
                     		} else {
@@ -77,7 +77,7 @@ public class MainLoginController implements Initializable {
                             if(authentication.equals(true)) {
                             	UserInterface userInterface = new UserInterface();
                             	try {
-        							userInterface.startUI(event, userDAO.getUser(username));
+        							userInterface.startUI(event, userDAO.findUser(username));
         						} catch (IOException e) {
         							// TODO Auto-generated catch block
         							System.out.println(e);

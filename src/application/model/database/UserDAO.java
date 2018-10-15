@@ -4,10 +4,13 @@ import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import HttpRequests.GetUserRequest;
+import HttpRequests.DeleteUserRequest;
+import HttpRequests.FindUserRequest;
 import HttpRequests.HttpHandler;
 import HttpRequests.LoginRequest;
 import HttpRequests.RegisterRequest;
+import HttpRequests.UpdateInformationRequest;
+import HttpRequests.UpdatePasswordRequest;
 import application.model.database.User;
 
 public class UserDAO {
@@ -49,10 +52,10 @@ public class UserDAO {
         }
 	}
 	
-	public UserLoginResponse getUser(String username) {
+	public UserLoginResponse findUser(String username) {
 		
 		try {
-			GetUserRequest getUserRequest = new GetUserRequest(username);
+			FindUserRequest getUserRequest = new FindUserRequest(username);
 			HttpHandler httpHandler = new HttpHandler(getUserRequest.getUserRequestUrl(), getUserRequest.getValuePairs());
 			HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
 			String responsejson = EntityUtils.toString(httpResponse.getEntity());
@@ -78,15 +81,81 @@ public class UserDAO {
 		}
 	}
 	
-	public User findUser(User user) {
-		return user;
+	public Boolean updateInformation(UserLoginResponse user) {
+		try {
+			System.out.println(user.getId());
+			System.out.println(user.getName());
+			System.out.println(user.getUsername());
+			UpdateInformationRequest updateInformation = new UpdateInformationRequest(user.getId(), user.getName(), user.getUsername()); 
+			HttpHandler httpHandler = new HttpHandler(updateInformation.getUpdateRequestUrl(), updateInformation.getValuePairs());
+			HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+			String responsejson = EntityUtils.toString(httpResponse.getEntity());
+			EntityUtils.consume(httpResponse.getEntity());
+			
+			System.out.println(responsejson);
+			
+			JSONObject jsonObject = new JSONObject(responsejson);
+			String updateSuccessful = jsonObject.get("success").toString();
+			
+			if(updateSuccessful.equals("true")) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
 	}
 	
-	public void updateUser(User user) {
+	public Boolean updatePassword(User user) {
+		try {
+			UpdatePasswordRequest updatePassword = new UpdatePasswordRequest(user.getUsername().toString(), user.getPassword().toString());
+			HttpHandler httpHandler = new HttpHandler(updatePassword.getUpdateRequestUrl(), updatePassword.getValuePairs());
+			HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+			String responsejson = EntityUtils.toString(httpResponse.getEntity());
+			EntityUtils.consume(httpResponse.getEntity());
+			
+			JSONObject jsonObject = new JSONObject(responsejson);
+			String updateSuccessful = jsonObject.get("success").toString();
+			
+			if(updateSuccessful.equals("true")) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
+
 	
-	public void deleteUser(User user) {
+	public Boolean deleteUser(String id) {
+		try {
+			DeleteUserRequest deleteUser = new DeleteUserRequest(id);
+			HttpHandler httpHandler = new HttpHandler(deleteUser.getDeleteRequestUrl(), deleteUser.getValuePairs());
+			HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+			String responsejson = EntityUtils.toString(httpResponse.getEntity());
+			EntityUtils.consume(httpResponse.getEntity());
+			
+			JSONObject jsonObject = new JSONObject(responsejson);
+			String deletionSuccessful = jsonObject.get("success").toString();
+			
+			if(deletionSuccessful.equals("true")) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;	
+		}
 		
 	}
 
