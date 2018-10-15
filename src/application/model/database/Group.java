@@ -1,9 +1,7 @@
-package application.model;
+package application.model.database;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import application.model.database.UserLoginResponse;
 
 public class Group {
 	private String groupOwner;
