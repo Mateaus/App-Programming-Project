@@ -19,6 +19,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import application.model.UserInterface;
+import application.model.database.Group;
+import application.model.database.GroupDAO;
 
 public class CreateController implements Initializable {
 	
@@ -94,7 +96,14 @@ public class CreateController implements Initializable {
 		String name = UserInterface.getUserLoginResponse().getUsername();
 		String userName = UserInterface.getUserLoginResponse().getName();
 		
-		System.out.println("User Id: " + id +", Username: " + name + ", Name: "+ userName);
+		/*
+		 * A rought draft on how to creat a group..
+		 * Current Required inputs to store in the database:
+		 * [UserID, groupname, studysubject, groupsize, date, starttime, duration, x , y]
+		 */
+		Group gr = new Group(id, nameOfGroup, studySubject, sizeOfGroup, start, length,studyDate, 1 ,2);
+		GroupDAO g = new GroupDAO();
+		g.createGroup(gr);
 		
 		if (isLocationSet && isValidSubject && isValidSize) {
 			// TODO: replace "username" with the current user's UserInformation
