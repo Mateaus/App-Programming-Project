@@ -1,7 +1,7 @@
 package HttpRequests;
 
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
+
 import org.apache.http.NameValuePair;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class LoginRequest {
 
-    private static final String LOGIN_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Login.php";
+    private final String LOGIN_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/Login.php";
     private ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 
     public LoginRequest(String username, String password) throws Exception{

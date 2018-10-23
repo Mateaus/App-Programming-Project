@@ -4,9 +4,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import application.model.UserInterface;
-import application.model.database.Group;
-import application.model.database.GroupDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

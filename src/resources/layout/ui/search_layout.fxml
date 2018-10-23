@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -11,6 +12,11 @@
 
 <Pane prefHeight="640.0" prefWidth="820.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ui.SearchController">
    <children>
+      <ScrollPane layoutX="246.0" layoutY="125.0" opacity="0.05" prefHeight="415.0" prefWidth="550.0" style="-fx-background-color: #23272a;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
       <TextField fx:id="groupName" layoutX="40.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
       <Label layoutX="82.0" layoutY="100.0" text="Group Name" textFill="WHITE">
          <font>
@@ -53,14 +59,11 @@
             <Font name="System Italic" size="13.0" />
          </font>
       </Label>
-      <Pane fx:id="imagePane" layoutX="246.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="550.0">
-         <children>
-            <ImageView fx:id="map" fitHeight="415.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../drawable/MainCampusMap.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Label layoutX="610.0" layoutY="77.0" text="Group List" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Line endY="640.0" layoutX="233.0" opacity="0.5" stroke="#7c7373" />
    </children>
 </Pane>
