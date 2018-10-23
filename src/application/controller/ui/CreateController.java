@@ -42,7 +42,6 @@ public class CreateController implements Initializable {
 	
 	private String nameOfGroup, studySubject, sizeOfGroup, start, length;
 	private LocalDate studyDate;
-	// private UserInformation user;
 	
 	public CreateController() {
 	}
@@ -73,7 +72,7 @@ public class CreateController implements Initializable {
 		length = duration.getValue();
 		messageLabel.setText(null);
 		
-		boolean isValidSubject = studySubject.matches("^[A-Z]{2,3}[ ][0-9]{4}$");
+		boolean isValidSubject = studySubject.matches("^[a-zA-Z]{2,3}[ ][0-9]{4}$");
 		boolean isValidSize = sizeOfGroup.matches("[0-9]{1,2}");
 		
 		if (isValidSubject && isValidSize) {

@@ -21,5 +21,19 @@
 	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/jna-platform-4.4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/mysql-connector-java-8.0.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/fluent-hc-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-cache-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-win-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpcore-4.4.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpmime-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/jna-4.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/jna-platform-4.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/sqlite-jdbc-3.23.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
