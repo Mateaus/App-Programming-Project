@@ -47,7 +47,7 @@
          </font>
       </Label>
       <ComboBox fx:id="duration" layoutX="40.0" layoutY="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
-      <Button fx:id="searchButton" layoutX="101.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" />
+      <Button fx:id="searchButton" layoutX="101.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" />
       <Label fx:id="messageLabel" layoutX="40.0" layoutY="605.0" textFill="RED">
          <font>
             <Font name="System Italic" size="13.0" />
