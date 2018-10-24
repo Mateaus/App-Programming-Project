@@ -8,7 +8,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 public class CreateGroupRequest {
-	private static final String CREATE_GROUP_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/CreateGroup.php";
+	private final String CREATE_GROUP_REQUEST_URL = "http://last-minute-screws.000webhostapp.com/CreateGroup.php";
     private List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(6);
 
     public CreateGroupRequest(String group_id, String group_name, String study_subject

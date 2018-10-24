@@ -36,6 +36,8 @@ public class UserDAO {
             String responsejson = EntityUtils.toString(httpResponse.getEntity());
             EntityUtils.consume(httpResponse.getEntity());
             
+            System.out.println(responsejson);
+            
             JSONObject jsonObject = new JSONObject(responsejson);
             String success = jsonObject.get("success").toString();  
                    

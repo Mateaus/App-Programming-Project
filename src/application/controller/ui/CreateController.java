@@ -42,6 +42,7 @@ public class CreateController implements Initializable {
 	
 	private String nameOfGroup, studySubject, sizeOfGroup, start, length;
 	private LocalDate studyDate;
+	// private UserInformation user;
 	
 	public CreateController() {
 	}
@@ -95,27 +96,20 @@ public class CreateController implements Initializable {
 		String name = UserInterface.getUserLoginResponse().getUsername();
 		String userName = UserInterface.getUserLoginResponse().getName();
 		
-		/*
-		 * A rought draft on how to creat a group..
-		 * Current Required inputs to store in the database:
-		 * [UserID, groupname, studysubject, groupsize, date, starttime, duration, x , y]
-		 */
-		Group gr = new Group(id, nameOfGroup, studySubject, sizeOfGroup, start, length,studyDate, 1 ,2);
-		GroupDAO g = new GroupDAO();
-		g.createGroup(gr);
+		
 		
 		if (isLocationSet && isValidSubject && isValidSize) {
 			// TODO: replace "username" with the current user's UserInformation
 			// application.model.Group group = new Group("username", nameOfGroup, studySubject, sizeOfGroup, start, length, studyDate, x, y);
 			
-			// groupName.setText(null);
-			// subject.setText(null);
-			// groupSize.setText(null);
-			// date.setValue(null);
-			// startTime.setValue(null);
-			// duration.setValue(null);
-			// x = 0.0;
-			// y = 0.0;
+			/*
+			 * A rought draft on how to creat a group..
+			 * Current Required inputs to store in the database:
+			 * [UserID, groupname, studysubject, groupsize, date, starttime, duration, x , y]
+			 */
+			Group gr = new Group(id, nameOfGroup, studySubject, sizeOfGroup, start, length,studyDate, x, y);
+			GroupDAO g = new GroupDAO();
+			g.createGroup(gr);
 		}
 	}
 	
