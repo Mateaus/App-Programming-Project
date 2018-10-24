@@ -7,33 +7,19 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/fluent-hc-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/httpclient-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/httpclient-cache-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/httpclient-win-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/httpcore-4.4.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/httpmime-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/java-json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/jna-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/jna-platform-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/mysql-connector-java-8.0.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mat/Desktop/Novus/jarfiles/sqlite-jdbc-3.23.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/fluent-hc-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-cache-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpclient-win-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpcore-4.4.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/httpmime-4.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/java-json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/jna-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/jna-platform-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/mysql-connector-java-8.0.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lauren/Documents/CS 3443/Project/Novus/jarfiles/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="jarfiles/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="jarfiles/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="jarfiles/fluent-hc-4.5.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/httpclient-4.5.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/httpclient-cache-4.5.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/httpclient-win-4.5.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/httpcore-4.4.10.jar"/>
+	<classpathentry kind="lib" path="jarfiles/httpmime-4.5.6.jar"/>
+	<classpathentry kind="lib" path="jarfiles/java-json.jar"/>
+	<classpathentry kind="lib" path="jarfiles/jna-4.4.0.jar"/>
+	<classpathentry kind="lib" path="jarfiles/jna-platform-4.4.0.jar"/>
+	<classpathentry kind="lib" path="jarfiles/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry kind="lib" path="jarfiles/sqlite-jdbc-3.23.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

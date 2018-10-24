@@ -11,6 +11,7 @@ import application.model.database.UserLoginResponse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -93,6 +94,13 @@ public class SettingsController implements Initializable{
 	
 	public void deleteUser(ActionEvent event) {
 		String id = user.getId().toString();
+		// TODO: Implement alert system before deleting account.
+		/*Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Delete Account");
+		alert.setHeaderText("Delete Account: " + item.getShortDescription());
+		alert.setContentText("Are you sure? Press OK to confirm, or cancel to Back out.");
+		*/
+		
 		Boolean deleteSuccessful = userDAO.deleteUser(id);
 		if(deleteSuccessful.equals(true)) {
 			// update label that the account was deleted

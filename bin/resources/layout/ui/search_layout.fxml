@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="640.0" prefWidth="820.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ui.SearchController">
+<Pane prefHeight="640.0" prefWidth="820.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ui.SearchController">
    <children>
-      <Label layoutX="219.0" layoutY="307.0" text="This Pane will be use to search for study groups." textFill="WHITE">
+      <ScrollPane layoutX="246.0" layoutY="125.0" opacity="0.05" prefHeight="415.0" prefWidth="550.0" style="-fx-background-color: #23272a;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <TextField fx:id="groupName" layoutX="40.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="82.0" layoutY="100.0" text="Group Name" textFill="WHITE">
          <font>
             <Font size="18.0" />
-         </font></Label>
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="175.0" text="Study Subject" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="subject" layoutX="40.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" promptText="CS 3443" />
+      <Label layoutX="90.0" layoutY="250.0" text="Group Size" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="groupSize" layoutX="40.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="110.0" layoutY="325.0" text="Date" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="40.0" layoutY="350.0" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="93.0" layoutY="400.0" text="Start Time" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="startTime" layoutX="40.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="95.0" layoutY="475.0" text="Duration" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="duration" layoutX="40.0" layoutY="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="180.0" />
+      <Button fx:id="searchButton" layoutX="101.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" />
+      <Label fx:id="messageLabel" layoutX="40.0" layoutY="605.0" textFill="RED">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="610.0" layoutY="77.0" text="Group List" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Line endY="640.0" layoutX="233.0" opacity="0.5" stroke="#7c7373" />
    </children>
 </Pane>
