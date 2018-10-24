@@ -53,7 +53,7 @@ public class SearchController implements Initializable {
 		duration.setItems (durations);
 		
 		// make clicks on transparent parts of image detectable
-		map.setPickOnBounds(true);
+		//map.setPickOnBounds(true);
 	}
 	
 	@FXML
