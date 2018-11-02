@@ -22,10 +22,34 @@ public class UserDAO {
     		HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getValuePairs());
     		HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
     		EntityUtils.consume(httpResponse.getEntity());
-    		
     	} catch (Exception e) {
     		System.out.println(e);
     	}
+	}
+	
+	/** Checks if the username already exists in our database */
+	public Boolean checkIfUsernameExists(User user)
+	{
+		try{
+			RegisterRequest registerRequest = new RegisterRequest(user.getUsername());
+    		HttpHandler httpHandler = new HttpHandler(registerRequest.getRegisterRequestUrl(), registerRequest.getUserName());
+    		HttpResponse httpResponse = httpHandler.HttpResponseRequest(httpHandler.HttpPostRequest());
+    		String responsejson = EntityUtils.toString(httpResponse.getEntity());
+    		EntityUtils.consume(httpResponse.getEntity());
+    		
+            JSONObject jsonObject = new JSONObject(responsejson);
+            String username = jsonObject.get("success").toString();  
+            
+            /** Tests to see if the username we are trying to create already exists */
+            if(username.equals("true")) {
+                return true;
+            } else {
+                return false;
+            }
+		} catch (Exception e){
+			System.out.println(e); /** Prints any error */
+		}
+		return false;
 	}
 	
 	public Boolean authenticateUser(User user) {
@@ -36,7 +60,7 @@ public class UserDAO {
             String responsejson = EntityUtils.toString(httpResponse.getEntity());
             EntityUtils.consume(httpResponse.getEntity());
             
-            System.out.println(responsejson);
+            //System.out.println(responsejson);
             
             JSONObject jsonObject = new JSONObject(responsejson);
             String success = jsonObject.get("success").toString();  
@@ -94,7 +118,7 @@ public class UserDAO {
 			String responsejson = EntityUtils.toString(httpResponse.getEntity());
 			EntityUtils.consume(httpResponse.getEntity());
 			
-			System.out.println(responsejson);
+			//System.out.println(responsejson);
 			
 			JSONObject jsonObject = new JSONObject(responsejson);
 			String updateSuccessful = jsonObject.get("success").toString();

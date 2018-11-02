@@ -29,7 +29,7 @@ public class UserInterface {
     public void startUI(Event event, UserLoginResponse userLoginResponse) throws IOException {
         // Loading our fxml files to be put into a borderpane.
     	GetGroupInformation group = new GetGroupInformation();
-		System.out.println(group.groupID);
+		//System.out.println(group.groupID);
 		String id = userLoginResponse.getId();
 		Pane infoPane;
 		
@@ -39,18 +39,26 @@ public class UserInterface {
         // Setting the fxml files that were loaded into our borderpane.
         borderPane.setTop(titleBar);
         
-		if(group.checkUserGroup(id))
-		{
-			URL infoUrl = getClass().getResource("/resources/layout/ui/search_layout.fxml");
-			infoPane = FXMLLoader.load(infoUrl);
-			borderPane.setCenter(infoPane);
-		}
-		else
-		{
-			URL infoUrl = getClass().getResource("/resources/layout/ui/create_layout.fxml");
-			infoPane = FXMLLoader.load(infoUrl);
-			
-		}
+        /**
+         * Commented out portions are to set the first primary view when the user logs in to the
+         *  create layout.
+         */
+//		if(group.checkUserGroup(id))
+//		{
+        /** 
+         * Search layout to be displayed primarily instead of create, since more people 
+         *  would probably be looking for groups rather than creating... Also it just looks nicer
+         */
+		URL infoUrl = getClass().getResource("/resources/layout/ui/search_layout.fxml");
+		infoPane = FXMLLoader.load(infoUrl);
+		borderPane.setCenter(infoPane);
+//		}
+//		else
+//		{
+//			URL infoUrl = getClass().getResource("/resources/layout/ui/create_layout.fxml");
+//			infoPane = FXMLLoader.load(infoUrl);
+//			
+//		}
 		borderPane.setCenter(infoPane);
 		
         // Initializing title bar events.

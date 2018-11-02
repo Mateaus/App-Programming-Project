@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -30,6 +31,8 @@ public class MainLoginController implements Initializable {
     private Pane logLayout;
     @FXML 
     private TextField emailTF, passTF;
+    @FXML 
+    private Label ErrorMessage;
     @FXML 
     private GridPane titleBar;
     
@@ -54,15 +57,18 @@ public class MainLoginController implements Initializable {
                     		UserLoginResponse userLoginResponse = userDAO.findUser(username);
                     		if (userLoginResponse != null) {
                     			userInterface.startUI(event, userLoginResponse);
+                    			ErrorMessage.setOpacity(0);
                     		} else {
-                    			System.out.println("Username doesn't exist!");
+                    			ErrorMessage.setText("Username doesn't exist");
+                    			ErrorMessage.setOpacity(1);
                     		}
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							System.out.println(e);
 						}
                     } else {
-                    	System.out.println("Wrong password");
+                    	ErrorMessage.setText("Wrong password");
+                    	ErrorMessage.setOpacity(1);
                     }
                 }
         );
@@ -77,15 +83,18 @@ public class MainLoginController implements Initializable {
                             if(authentication.equals(true)) {
                             	UserInterface userInterface = new UserInterface();
                             	try {
-        							userInterface.startUI(event, userDAO.findUser(username));
+                            		userInterface.startUI(event, userDAO.findUser(username));
+                            		ErrorMessage.setOpacity(0);
         						} catch (IOException e) {
         							// TODO Auto-generated catch block
         							System.out.println(e);
         						}
                             } else {
-                            	System.out.println("Wrong password");
+                            	ErrorMessage.setText("Wrong password");
+                            	ErrorMessage.setOpacity(1);
                             }
                         default:
+                        	ErrorMessage.setOpacity(0);
                         	break;	
                     }
                 }
