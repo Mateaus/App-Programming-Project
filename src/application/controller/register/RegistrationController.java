@@ -2,8 +2,10 @@ package application.controller.register;
 
 import application.controller.login.MainLoginController;
 import application.model.TitleBar;
+import application.model.UserInterface;
 import application.model.database.User;
 import application.model.database.UserDAO;
+import application.model.database.UserLoginResponse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -65,25 +68,39 @@ public class RegistrationController implements Initializable{
         String password = passTF.getText().toString();
         String passwordCheck = passCheckTF.getText().toString();
         try {
+        	/**
+        	 * Verifies that the username the user is wanting to register with, does not already exist
+        	 */
             if(nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
-                    && passTF != null && !password.isEmpty() && password.equals(passwordCheck) && !passwordCheck.isEmpty()) {
-      
-            	userDAO.createUser(new User(name, username, password));
-            	
-            	MainLoginController loginController = new MainLoginController();
-        		loginController.changeToMainScreen(event);
-                
+                    && passTF != null && !password.isEmpty() && password.equals(passwordCheck) && !passwordCheck.isEmpty()) 
+            {
+            	Boolean userAuthentication = userDAO.checkIfUsernameExists(new User(username, password));                
+                if(userAuthentication == true) {
+                	userDAO.createUser(new User(name, username, password));
+                	MainLoginController loginController = new MainLoginController();
+            		loginController.changeToMainScreen(event);
+                } else {
+                	/** Displays the error message that the username already exists */
+                	errorMessage.setText("Username already exists");
+                	errorMessage.setOpacity(1);
+                }
             } else if (nameTF != null && !name.isEmpty() && usernameTF != null && !username.isEmpty()
-                    && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)  && !passwordCheck.isEmpty()) {
-            	// TODO: Need to include in layout.
-            	String passException = "Passwords do not match";
-            	errorMessage.setText(passException);
+                    && passTF != null && !password.isEmpty() && !password.equals(passwordCheck)  && !passwordCheck.isEmpty()) 
+            {
+            	/** Displays the error message that the passwords provided do not match */
+            	errorMessage.setText("Passwords do not match");
+            	errorMessage.setOpacity(1);
             } else {
+            	/** Displays the error message that there are still blank fields */
             	String fillException = "Fill the blanks";
             	errorMessage.setText(fillException);
+            	errorMessage.setOpacity(1);
             }
         } catch (Exception e) {
-            System.out.printf("Account not created\n" + e);
+        	/** Displays the error message the the username already exists to the user */
+        	System.out.printf("Account not created\n" + e);
+        	errorMessage.setText("Account not created");
+        	errorMessage.setOpacity(1);
         }
 
 

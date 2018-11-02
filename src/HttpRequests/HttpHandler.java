@@ -21,11 +21,17 @@ public class HttpHandler {
 
     public HttpPost HttpPostRequest() {
     	try {
+    		/** Creates a new httpPostRequest from the specific url passed as 
+    		 *   a parameter */
     		HttpPost httpPost = new HttpPost(this.UrlRequest);
+    		/** This call retrieves the response from the database,
+    		 *   passing our user and their password from the ArrayList 
+    		 *   nameValuePairs */
     		httpPost.setEntity(new UrlEncodedFormEntity(this.nameValuePairs));
+    		/** Returns the decoded value from the httpPost */
     		return httpPost;
     	} catch (Exception e ) {
-    		System.out.println(e);
+    		System.out.println(e); /** Prints any error caught */
     		return null;
     	}
 

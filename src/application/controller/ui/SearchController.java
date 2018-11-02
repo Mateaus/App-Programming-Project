@@ -31,13 +31,15 @@ public class SearchController implements Initializable {
 	@FXML private Pane imagePane;
 	@FXML private Label messageLabel;
 	
-	private Image pin;
-	private ImageView view;
-	
 	private String nameOfGroup, studySubject, sizeOfGroup, start, length;
 	private LocalDate studyDate;
 	
 	public SearchController() {
+		/**
+		 * In the GUI possibly make the filtering fields that are to the left hand 
+		 *  side of the grey line be defaulted to a side window that can be pulled 
+		 *  open by the user to open up the filtering options.
+		 */
 	}
 	
 	@Override
@@ -51,9 +53,6 @@ public class SearchController implements Initializable {
 																			  "4:30", "5:00", "5:30", "6:00");
 		startTime.setItems (times);
 		duration.setItems (durations);
-		
-		// make clicks on transparent parts of image detectable
-		//map.setPickOnBounds(true);
 	}
 	
 	@FXML
@@ -79,10 +78,5 @@ public class SearchController implements Initializable {
 		} else {
 			messageLabel.setText("Invalid group size and study subject");
 		}
-	}
-	
-	@FXML
-	private void handleMapClick (MouseEvent event) {
-		
 	}
 }
